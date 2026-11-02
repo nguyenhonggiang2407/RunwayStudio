@@ -1,5 +1,7 @@
 # Runway Studio 2.0
 
+[Mã nguồn GitHub](https://github.com/nguyenhonggiang2407/RunwayStudio) · [CI đã xác minh](https://github.com/nguyenhonggiang2407/RunwayStudio/actions/runs/41466543082)
+
 **Discover, Style, Save & Shop** — một ứng dụng thương mại thời trang với Outfit Studio và Shop The Scene. Nâng cấp tăng dần từ project Java trong `RunwayStore_Fullstack_Source(1).zip`; giữ package `vn.runway.store`, session/CSRF và các API mua hàng cũ.
 
 ![Runway Studio](docs/screenshots/home-desktop-1440.png)
@@ -84,7 +86,7 @@ Java 17 · Spring Boot 3.5.16 · Spring Security · JPA · Flyway · MySQL 8.4/H
 
 ## Phạm vi chưa hoàn tất
 
-Chưa tích hợp thanh toán sandbox, email, quy trình trả hàng, upload ảnh người dùng, tài khoản nhân viên nhiều cấp hoặc ML/AR. Fit Finder dùng bảng minh họa. UI Studio hiện tải tối đa 60 sản phẩm; API catalog có phân trang nhưng bộ chọn Studio cho catalog lớn còn là backlog. Admin UI dùng danh sách tối đa 60 sản phẩm/đơn; API phân trang riêng đã có. Chưa đo Lighthouse/coverage, chưa chạy Docker tại môi trường bàn giao, chưa công bố GitHub Actions đã xanh và chưa triển khai Java lên host public.
+Chưa tích hợp thanh toán sandbox, email, quy trình trả hàng, upload ảnh người dùng, tài khoản nhân viên nhiều cấp hoặc ML/AR. Fit Finder dùng bảng minh họa. UI Studio hiện tải tối đa 60 sản phẩm; API catalog có phân trang nhưng bộ chọn Studio cho catalog lớn còn là backlog. Admin UI dùng danh sách tối đa 60 sản phẩm/đơn; API phân trang riêng đã có. Chưa đo Lighthouse/coverage, chưa chạy Docker tại môi trường bàn giao, chưa triển khai Java lên host public. GitHub Actions đã chạy thành công trên mã nguồn public; xem [lần chạy đã xác minh](https://github.com/nguyenhonggiang2407/RunwayStudio/actions/runs/41466543082).
 
 Quét dependency còn hiển thị hai advisory trên Spring MVC 6.2.19; đánh giá điều kiện không áp dụng cho ứng dụng được lưu cùng test và ngày hết hạn, **không xóa cảnh báo khỏi báo cáo**. Spring Boot 3.5 đã hết OSS support; kế hoạch nâng major cần một thay đổi riêng sau release core, theo ràng buộc giữ 3.5.x của roadmap.
 

@@ -4,6 +4,7 @@ Kết quả dưới đây được chạy thật trên bản source khôi phục
 
 | Kiểm tra | Kết quả / môi trường | Bằng chứng |
 |---|---|---|
+| GitHub Actions hosted | 3/3 jobs success: java-browser, mysql, secrets; source commit `bc73b05c7ea1ab9d5a966ce53e1f74adfe444221` | [Run #1](https://github.com/nguyenhonggiang2407/RunwayStudio/actions/runs/41466543082) |
 | Baseline ZIP v1 | 16/16, 0 fail/error/skipped | evidence/baseline-maven-test.txt |
 | Java/H2 upgrade | 78/78, 0 fail/error/skipped; JDK 17.0.20, Maven 3.9.11, Boot 3.5.16; Flyway + validate | evidence/java-verify.txt |
 | Customer count regression sau full suite | 12/12 CommerceIntegrationTest; customer count không tính ADMIN | evidence/dashboard-regression.txt |
@@ -21,6 +22,8 @@ JAR cuối được kiểm tra ZIP integrity và đối chiếu resource/config/
 
 Browser chụp ảnh thật của storefront/Outfit/Scenes/admin trên ba viewport; no-horizontal-overflow và no-pageerror được assert trong cả 12 luồng. Đây không là audit a11y toàn diện. Ảnh không chứa credential hoặc dữ liệu thật.
 
-**Chưa xác minh / chưa làm:** Docker image và Compose chưa được chạy vì môi trường không có Docker; GitHub Actions mới là workflow trong source, chưa có hosted run; chưa deploy Java HTTPS, chưa video demo, chưa benchmark Lighthouse/coverage, chưa payment sandbox. Không công bố điểm số hoặc badge xanh cho các mục này. Backlog ở ROADMAP.md.
+**Chưa xác minh / chưa làm:** Docker image và Compose chưa được chạy vì môi trường không có Docker; chưa deploy Java HTTPS, chưa video demo, chưa benchmark Lighthouse/coverage, chưa payment sandbox. Không công bố điểm số hoặc badge xanh cho các mục này. Backlog ở ROADMAP.md.
 
 Các log nguồn có timezone của executor khác +07; ngày hiển thị cho bàn giao là 02/11/2026. `baseline/` chứa bằng chứng lịch sử v1 được đánh dấu riêng, không trộn vào kết quả release.
+
+Repository đã public ngày 02/11/2026. Lần chạy GitHub ở trên xác minh commit import mã nguồn sạch; commit tài liệu kế tiếp bổ sung liên kết này và cập nhật trạng thái công bố, không thay đổi mã ứng dụng.
