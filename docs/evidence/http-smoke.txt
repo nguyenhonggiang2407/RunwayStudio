@@ -1,0 +1,14 @@
+Startup connection: URLError(ConnectionRefusedError(111, 'Connection refused'))
+PASS packaged JAR starts and serves 11 products
+PASS all six representative frontend routes return HTTP 200
+PASS local product media is served
+PASS real CSRF + session login
+PASS customer denied admin API
+PASS two simultaneous buyers for the final item: exactly one order succeeds
+PASS server-side price and shipping calculation
+PASS HTTP retry returns existing order without duplicate stock deduction
+PASS retry preserves a new persistent cart
+PASS cancel restores stock exactly once
+PASS repeated cancellation is rejected
+PASS admin updates price and stock via real authenticated HTTP
+ALL 12 HTTP CHECKS PASSED

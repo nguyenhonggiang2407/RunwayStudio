@@ -1,0 +1,8 @@
+# Local MySQL demo only; never combine with prod.
+services:
+  app:
+    environment:
+      SPRING_PROFILES_ACTIVE: mysql
+      APP_SEED_ENABLED: "true"
+      RUNWAY_ADMIN_PASSWORD: ${RUNWAY_ADMIN_PASSWORD:?Set a local demo admin password}
+      RUNWAY_CUSTOMER_PASSWORD: ${RUNWAY_CUSTOMER_PASSWORD:?Set a local demo customer password}

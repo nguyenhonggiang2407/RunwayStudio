@@ -1,0 +1,7 @@
+ALTER TABLE shop_orders ADD COLUMN discount BIGINT NOT NULL DEFAULT 0;
+ALTER TABLE shop_orders ADD COLUMN promotion_code VARCHAR(30);
+CREATE TABLE customer_addresses (id BIGINT AUTO_INCREMENT PRIMARY KEY, account_id BIGINT NOT NULL, recipient VARCHAR(100) NOT NULL, phone VARCHAR(20) NOT NULL, address VARCHAR(500) NOT NULL, FOREIGN KEY(account_id) REFERENCES accounts(id));
+CREATE TABLE promotion_codes (id BIGINT AUTO_INCREMENT PRIMARY KEY, code VARCHAR(30) NOT NULL, percent_off INT NOT NULL, min_spend BIGINT NOT NULL, max_discount BIGINT NOT NULL, usage_limit INT NOT NULL, used INT NOT NULL, active BOOLEAN NOT NULL, expires_at TIMESTAMP(6) WITH TIME ZONE NOT NULL, UNIQUE(code), CHECK(percent_off BETWEEN 1 AND 100), CHECK(used>=0 AND used<=usage_limit));
+CREATE TABLE promotion_redemptions (id BIGINT AUTO_INCREMENT PRIMARY KEY, promotion_id BIGINT NOT NULL, account_id BIGINT NOT NULL, order_id BIGINT NOT NULL, UNIQUE(promotion_id,account_id), UNIQUE(order_id), FOREIGN KEY(promotion_id) REFERENCES promotion_codes(id), FOREIGN KEY(account_id) REFERENCES accounts(id), FOREIGN KEY(order_id) REFERENCES shop_orders(id));
+CREATE TABLE order_status_history (id BIGINT AUTO_INCREMENT PRIMARY KEY, order_id BIGINT NOT NULL, actor_id BIGINT, status VARCHAR(20) NOT NULL, created_at TIMESTAMP(6) WITH TIME ZONE NOT NULL, FOREIGN KEY(order_id) REFERENCES shop_orders(id));
+INSERT INTO order_status_history(order_id,status,created_at) SELECT id,status,created_at FROM shop_orders;

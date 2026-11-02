@@ -1,0 +1,12 @@
+target
+.git
+.env
+node_modules
+data
+docs/evidence
+docs/screenshots
+*.zip
+*.bundle
+.openai
+playwright-report
+test-results

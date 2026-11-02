@@ -1,0 +1,7 @@
+Private history snapshot through the implementation commit; final artifact metadata commits may follow.
+
+a27fa83 chore: import unchanged RunwayStore archive
+cde0251 feat: upgrade Runway Studio commerce, private outfits and interactive scenes
+7764c08 docs: record architecture, security review and verified release evidence
+3abab1f chore: finalize executable Maven wrapper and history snapshot
+4cd63ad fix: use portable plus glyph and refresh verified browser evidence

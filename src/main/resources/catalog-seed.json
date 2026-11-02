@@ -1,0 +1,412 @@
+[
+  {
+    "id": 10893259735345,
+    "slug": "air-jordan-12-retro-copy",
+    "name": "Studio Runner",
+    "category": "Giày",
+    "description": "Thiết kế minh họa trong bộ sưu tập Runway Studio. Giá và sản phẩm phục vụ bản demo portfolio.",
+    "image": "/media/owned/studio-runner.svg",
+    "variants": [
+      {
+        "id": 57015176364337,
+        "size": "40",
+        "price": 3725000,
+        "stock": 20
+      },
+      {
+        "id": 57015176397105,
+        "size": "41",
+        "price": 3725000,
+        "stock": 20
+      },
+      {
+        "id": 57015176429873,
+        "size": "42",
+        "price": 3725000,
+        "stock": 20
+      },
+      {
+        "id": 57015176462641,
+        "size": "43",
+        "price": 3725000,
+        "stock": 20
+      },
+      {
+        "id": 57015176495409,
+        "size": "44",
+        "price": 3725000,
+        "stock": 20
+      },
+      {
+        "id": 57015176528177,
+        "size": "45",
+        "price": 3725000,
+        "stock": 20
+      },
+      {
+        "id": 57015176560945,
+        "size": "46",
+        "price": 3725000,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 10883669492017,
+    "slug": "blazzer",
+    "name": "City Blazer",
+    "category": "Áo khoác",
+    "description": "Thiết kế minh họa trong bộ sưu tập Runway Studio. Giá và sản phẩm phục vụ bản demo portfolio.",
+    "image": "/media/owned/city-blazer.svg",
+    "variants": [
+      {
+        "id": 56835765993777,
+        "size": "S",
+        "price": 4975000,
+        "stock": 20
+      },
+      {
+        "id": 56835766026545,
+        "size": "L",
+        "price": 4975000,
+        "stock": 20
+      },
+      {
+        "id": 56835766059313,
+        "size": "M",
+        "price": 4975000,
+        "stock": 20
+      },
+      {
+        "id": 56835766092081,
+        "size": "XL",
+        "price": 4975000,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 10883676602673,
+    "slug": "hoodie",
+    "name": "Cloud Hoodie",
+    "category": "Áo khoác",
+    "description": "Thiết kế minh họa trong bộ sưu tập Runway Studio. Giá và sản phẩm phục vụ bản demo portfolio.",
+    "image": "/media/owned/cloud-hoodie.svg",
+    "variants": [
+      {
+        "id": 56836002185521,
+        "size": "S",
+        "price": 4975000,
+        "stock": 20
+      },
+      {
+        "id": 56836002218289,
+        "size": "L",
+        "price": 4975000,
+        "stock": 20
+      },
+      {
+        "id": 56836002251057,
+        "size": "M",
+        "price": 4975000,
+        "stock": 20
+      },
+      {
+        "id": 56836002283825,
+        "size": "XL",
+        "price": 4975000,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 10883683352881,
+    "slug": "hoodie-black",
+    "name": "Night Hoodie",
+    "category": "Áo khoác",
+    "description": "Thiết kế minh họa trong bộ sưu tập Runway Studio. Giá và sản phẩm phục vụ bản demo portfolio.",
+    "image": "/media/owned/night-hoodie.svg",
+    "variants": [
+      {
+        "id": 56836251681073,
+        "size": "S",
+        "price": 4975000,
+        "stock": 20
+      },
+      {
+        "id": 56836251713841,
+        "size": "L",
+        "price": 4975000,
+        "stock": 20
+      },
+      {
+        "id": 56836251746609,
+        "size": "M",
+        "price": 4975000,
+        "stock": 20
+      },
+      {
+        "id": 56836251779377,
+        "size": "XL",
+        "price": 4975000,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 10883670835505,
+    "slug": "sweatshirt",
+    "name": "Daily Sweat",
+    "category": "Áo",
+    "description": "Thiết kế minh họa trong bộ sưu tập Runway Studio. Giá và sản phẩm phục vụ bản demo portfolio.",
+    "image": "/media/owned/daily-sweat.svg",
+    "variants": [
+      {
+        "id": 56835806396721,
+        "size": "S",
+        "price": 4975000,
+        "stock": 20
+      },
+      {
+        "id": 56835806429489,
+        "size": "L",
+        "price": 4975000,
+        "stock": 20
+      },
+      {
+        "id": 56835806462257,
+        "size": "M",
+        "price": 4975000,
+        "stock": 20
+      },
+      {
+        "id": 56835806495025,
+        "size": "XL",
+        "price": 4975000,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 10883680895281,
+    "slug": "sweatshirt-plus",
+    "name": "Box Sweat",
+    "category": "Áo",
+    "description": "Thiết kế minh họa trong bộ sưu tập Runway Studio. Giá và sản phẩm phục vụ bản demo portfolio.",
+    "image": "/media/owned/box-sweat.svg",
+    "variants": [
+      {
+        "id": 56836143743281,
+        "size": "S",
+        "price": 4975000,
+        "stock": 20
+      },
+      {
+        "id": 56836143776049,
+        "size": "L",
+        "price": 4975000,
+        "stock": 20
+      },
+      {
+        "id": 56836143808817,
+        "size": "M",
+        "price": 4975000,
+        "stock": 20
+      },
+      {
+        "id": 56836143841585,
+        "size": "XL",
+        "price": 4975000,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 10893258359089,
+    "slug": "tatum-5-orbit",
+    "name": "Orbit Runner",
+    "category": "Giày",
+    "description": "Thiết kế minh họa trong bộ sưu tập Runway Studio. Giá và sản phẩm phục vụ bản demo portfolio.",
+    "image": "/media/owned/orbit-runner.svg",
+    "variants": [
+      {
+        "id": 57015166730545,
+        "size": "40",
+        "price": 3725000,
+        "stock": 20
+      },
+      {
+        "id": 57015166763313,
+        "size": "41",
+        "price": 3725000,
+        "stock": 20
+      },
+      {
+        "id": 57015166796081,
+        "size": "42",
+        "price": 3725000,
+        "stock": 20
+      },
+      {
+        "id": 57015166828849,
+        "size": "43",
+        "price": 3725000,
+        "stock": 20
+      },
+      {
+        "id": 57015166861617,
+        "size": "44",
+        "price": 3725000,
+        "stock": 20
+      },
+      {
+        "id": 57015166894385,
+        "size": "45",
+        "price": 3725000,
+        "stock": 20
+      },
+      {
+        "id": 57015166927153,
+        "size": "46",
+        "price": 3725000,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 10893258457393,
+    "slug": "tatum-5-orbit-copy",
+    "name": "Court Runner",
+    "category": "Giày",
+    "description": "Thiết kế minh họa trong bộ sưu tập Runway Studio. Giá và sản phẩm phục vụ bản demo portfolio.",
+    "image": "/media/owned/court-runner.svg",
+    "variants": [
+      {
+        "id": 57015167025457,
+        "size": "40",
+        "price": 3725000,
+        "stock": 20
+      },
+      {
+        "id": 57015167058225,
+        "size": "41",
+        "price": 3725000,
+        "stock": 20
+      },
+      {
+        "id": 57015167090993,
+        "size": "42",
+        "price": 3725000,
+        "stock": 20
+      },
+      {
+        "id": 57015167123761,
+        "size": "43",
+        "price": 3725000,
+        "stock": 20
+      },
+      {
+        "id": 57015167156529,
+        "size": "44",
+        "price": 3725000,
+        "stock": 20
+      },
+      {
+        "id": 57015167189297,
+        "size": "45",
+        "price": 3725000,
+        "stock": 20
+      },
+      {
+        "id": 57015167222065,
+        "size": "46",
+        "price": 3725000,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 10883673653553,
+    "slug": "tshirt",
+    "name": "Essential Tee",
+    "category": "Áo",
+    "description": "Thiết kế minh họa trong bộ sưu tập Runway Studio. Giá và sản phẩm phục vụ bản demo portfolio.",
+    "image": "/media/owned/essential-tee.svg",
+    "variants": [
+      {
+        "id": 56835911582001,
+        "size": "S",
+        "price": 4975000,
+        "stock": 20
+      },
+      {
+        "id": 56835911614769,
+        "size": "L",
+        "price": 4975000,
+        "stock": 20
+      },
+      {
+        "id": 56835911647537,
+        "size": "M",
+        "price": 4975000,
+        "stock": 20
+      },
+      {
+        "id": 56835911680305,
+        "size": "XL",
+        "price": 4975000,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 2026009,
+    "slug": "straight-trousers",
+    "name": "Straight Trousers",
+    "category": "Quần",
+    "description": "Thiết kế minh họa cho Runway Studio.",
+    "image": "/media/owned/straight-trousers.svg",
+    "variants": [
+      {
+        "id": 20261090,
+        "size": "S",
+        "price": 890000,
+        "stock": 20
+      },
+      {
+        "id": 20261091,
+        "size": "M",
+        "price": 890000,
+        "stock": 20
+      },
+      {
+        "id": 20261092,
+        "size": "L",
+        "price": 890000,
+        "stock": 20
+      },
+      {
+        "id": 20261093,
+        "size": "XL",
+        "price": 890000,
+        "stock": 20
+      }
+    ]
+  },
+  {
+    "id": 2026010,
+    "slug": "weekend-tote",
+    "name": "Weekend Tote",
+    "category": "Phụ kiện",
+    "description": "Thiết kế minh họa cho Runway Studio.",
+    "image": "/media/owned/weekend-tote.svg",
+    "variants": [
+      {
+        "id": 20261100,
+        "size": "One size",
+        "price": 490000,
+        "stock": 20
+      }
+    ]
+  }
+]

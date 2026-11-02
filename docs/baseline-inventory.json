@@ -1,0 +1,992 @@
+[
+  {
+    "path": "RunwayStore/.env.example",
+    "bytes": 215,
+    "sha256": "e20b86cec1eac9aaf8c06d33d5b9bb9bdf722eaf4a78b5fe36e19e9ff3353176"
+  },
+  {
+    "path": "RunwayStore/.gitignore",
+    "bytes": 53,
+    "sha256": "7909ce1a9e8687fcabda9c5c23729328a3badb4c908001aa14eb00f0f4011284"
+  },
+  {
+    "path": "RunwayStore/.mvn/wrapper/maven-wrapper.properties",
+    "bytes": 168,
+    "sha256": "8f2a4438810348270d9d98f8d6d530541ddb7271e373db207e8ac381e0e35b62"
+  },
+  {
+    "path": "RunwayStore/README.md",
+    "bytes": 6154,
+    "sha256": "c7a5a7d86d63e13b4b7e86de671b3001046023637db4ff94f512eafaab753c30"
+  },
+  {
+    "path": "RunwayStore/RUN_DEMO.bat",
+    "bytes": 275,
+    "sha256": "ae6e1c14e5bb7f1be71a34b1a350ac646639c85313c7dd66b6b87441f1e89c93"
+  },
+  {
+    "path": "RunwayStore/RUN_DEMO.sh",
+    "bytes": 156,
+    "sha256": "da5cea58de1e43482aa4002e4f06aad0916dc3ba904fa196f88dafa2c4e5080c"
+  },
+  {
+    "path": "RunwayStore/THIRD_PARTY_NOTICES.md",
+    "bytes": 1293,
+    "sha256": "43f2ba58ee24a84cb7eae072ec4114b916bb57642d547410934657d7c934ecca"
+  },
+  {
+    "path": "RunwayStore/compose.yaml",
+    "bytes": 540,
+    "sha256": "69427fb49ab901ba97e0c38206d9edf37dc2a1d001e8307ed41aeca678abfd53"
+  },
+  {
+    "path": "RunwayStore/database/create_database.sql",
+    "bytes": 439,
+    "sha256": "eaf6bba642b6537f9a4d6cdab58847d9888b6442bac7b2498dbc0a7eb311f259"
+  },
+  {
+    "path": "RunwayStore/docs/API.md",
+    "bytes": 2730,
+    "sha256": "7805e4a0ebae6296fff23294af89ccbea465608e5808137d24c57228994b1417"
+  },
+  {
+    "path": "RunwayStore/docs/ARCHITECTURE.md",
+    "bytes": 3981,
+    "sha256": "1bd47e65c3f9547e6af9e13fc8c9a5621f2f97ce8d19e1a6d7547ae0332a0381"
+  },
+  {
+    "path": "RunwayStore/docs/DEMO.md",
+    "bytes": 1719,
+    "sha256": "e2481ef2adbe202816c87283a4b0fa4101d87d889f7ac8b331f103b1b1eb0cb3"
+  },
+  {
+    "path": "RunwayStore/docs/TEST_CASES.md",
+    "bytes": 2068,
+    "sha256": "5da699e1bcb306e1725a2c52508aa04524900b86004bc31c86ecce2aa5417216"
+  },
+  {
+    "path": "RunwayStore/docs/UPSTREAM_IMPORT.json",
+    "bytes": 234,
+    "sha256": "0840fad20f55095544c984e37a5c183526cdd8dfd0eb855317165b73ddede97e"
+  },
+  {
+    "path": "RunwayStore/docs/VALIDATION.md",
+    "bytes": 2397,
+    "sha256": "199fa33fa8d83b3a7d454b04c6661109f0ef2a8b3c5bd2ea4d7d43fb5f6e9763"
+  },
+  {
+    "path": "RunwayStore/docs/http-smoke-results.json",
+    "bytes": 753,
+    "sha256": "6d9d72894b351559d050211d76416da24058056b14a4eacbc364a53a06bab920"
+  },
+  {
+    "path": "RunwayStore/docs/integration-test-results.txt",
+    "bytes": 323,
+    "sha256": "074b6762850f5bcbcc83933f5c7b3f7a07e025c2db1609369b3bff95b91b7f4d"
+  },
+  {
+    "path": "RunwayStore/mvnw",
+    "bytes": 11790,
+    "sha256": "cae96cef89ebea3531221f4ae17c23cf8edf67d00eae8306d4186ae1bbed4d02"
+  },
+  {
+    "path": "RunwayStore/mvnw.cmd",
+    "bytes": 8481,
+    "sha256": "46eedb8419bd14fe70d5bb2916d7b6f51806e51b39d5b76a42610384ca929c1c"
+  },
+  {
+    "path": "RunwayStore/pom.xml",
+    "bytes": 1923,
+    "sha256": "ed173b143228e5b8fc53113e86033a7b1e048c80b594c9a3db2b67b0a45c6f55"
+  },
+  {
+    "path": "RunwayStore/src/main/java/vn/runway/store/RunwayApplication.java",
+    "bytes": 299,
+    "sha256": "d3f65da031612e42acb4cfc5630ba088334d5d99e4b6d0d7fc9113924ac56e0b"
+  },
+  {
+    "path": "RunwayStore/src/main/java/vn/runway/store/config/SecurityConfig.java",
+    "bytes": 2750,
+    "sha256": "39d5b8f0fbb4190c52d2d3f2f0e6d3373c2ae57052cf5ae023e9a6c974bfc103"
+  },
+  {
+    "path": "RunwayStore/src/main/java/vn/runway/store/config/SeedData.java",
+    "bytes": 2141,
+    "sha256": "70561d708f4f607acb8e3b838e067173c5b2ec7e4d9e819597729c857e96d8d3"
+  },
+  {
+    "path": "RunwayStore/src/main/java/vn/runway/store/dto/Requests.java",
+    "bytes": 1208,
+    "sha256": "8ac2e7cb3ea3c27b80f6bab6477abb0771ab29f83e61c3317d3f1861911f9ed1"
+  },
+  {
+    "path": "RunwayStore/src/main/java/vn/runway/store/model/Account.java",
+    "bytes": 429,
+    "sha256": "bb874dfd3b834ee59c2c2c2baa6599976c2da4404e59ebf0ab0cf37e11adcc08"
+  },
+  {
+    "path": "RunwayStore/src/main/java/vn/runway/store/model/OrderLine.java",
+    "bytes": 542,
+    "sha256": "443d3cc54e10cdc19dd1497cce256584098aa60166f06076e4f3922eac7c32d3"
+  },
+  {
+    "path": "RunwayStore/src/main/java/vn/runway/store/model/Product.java",
+    "bytes": 466,
+    "sha256": "64ddca8ab54c1f55dfa7fa9ecb2e3edc1ed1c2a73e08df19315d4e5d6b0d8b5e"
+  },
+  {
+    "path": "RunwayStore/src/main/java/vn/runway/store/model/ShopOrder.java",
+    "bytes": 828,
+    "sha256": "41c4813ac3b09c447bb9a6d6495c5e5e3d6e7691e7acd075193d8769f82269a0"
+  },
+  {
+    "path": "RunwayStore/src/main/java/vn/runway/store/model/Variant.java",
+    "bytes": 360,
+    "sha256": "42b3cae69997766374d65d20c8ccf9135f524df9afd05d1587544479089128c8"
+  },
+  {
+    "path": "RunwayStore/src/main/java/vn/runway/store/repository/AccountRepository.java",
+    "bytes": 507,
+    "sha256": "822bc02a79c1ccbe6f1a8b75588948c1bf62d542202653e9e3ceb9b5ddda2eca"
+  },
+  {
+    "path": "RunwayStore/src/main/java/vn/runway/store/repository/OrderLineRepository.java",
+    "bytes": 297,
+    "sha256": "ab5456da503ddbdeddd6ac6ed7b21d6d877d0979d84dcc199a7b338f01116176"
+  },
+  {
+    "path": "RunwayStore/src/main/java/vn/runway/store/repository/OrderRepository.java",
+    "bytes": 638,
+    "sha256": "cbe6a49a99f9d75582c0cee0f3a3bce6288d94142391fcf82a1f57139a5cc2c9"
+  },
+  {
+    "path": "RunwayStore/src/main/java/vn/runway/store/repository/ProductRepository.java",
+    "bytes": 320,
+    "sha256": "666ca68bbcd7f2a98e9e60af271d30e236cb2df3acf84f55f5db7582b9268156"
+  },
+  {
+    "path": "RunwayStore/src/main/java/vn/runway/store/repository/VariantRepository.java",
+    "bytes": 514,
+    "sha256": "cfa7d1e2d649006aee273cea3c681431da1f4155eef63079452fdf27e8daf070"
+  },
+  {
+    "path": "RunwayStore/src/main/java/vn/runway/store/service/CartService.java",
+    "bytes": 2801,
+    "sha256": "de87b68abb46cd44522dfe8cd9a16d3d4aaa3b584ab140851db84a47c229c527"
+  },
+  {
+    "path": "RunwayStore/src/main/java/vn/runway/store/service/CatalogService.java",
+    "bytes": 1771,
+    "sha256": "6ad9cc1461d033bff3b053974c7cef962fb2630fda0d08352cfe4accdb41f256"
+  },
+  {
+    "path": "RunwayStore/src/main/java/vn/runway/store/service/OrderService.java",
+    "bytes": 3976,
+    "sha256": "a21da6743c1179115661136987b5d7754abc7ed01ba8e7af5f03661c527513e3"
+  },
+  {
+    "path": "RunwayStore/src/main/java/vn/runway/store/web/AdminController.java",
+    "bytes": 3274,
+    "sha256": "4457e3f3ca7f92c9c49a3a704a730216cde2f02cedd61062fb6b68f15b26d3ec"
+  },
+  {
+    "path": "RunwayStore/src/main/java/vn/runway/store/web/ApiErrors.java",
+    "bytes": 1667,
+    "sha256": "42c2ddb9de2fd411a50a04af980948036105b87eecf2e4fa3411e27005486c5e"
+  },
+  {
+    "path": "RunwayStore/src/main/java/vn/runway/store/web/PageController.java",
+    "bytes": 990,
+    "sha256": "152b9704f5cfad9a2145fef4eb7bf3b4a8ddd0d45b1a569818604f156139e9f0"
+  },
+  {
+    "path": "RunwayStore/src/main/java/vn/runway/store/web/StoreController.java",
+    "bytes": 5408,
+    "sha256": "72a1814510792b4fb0ae7c89161cc985ce06525000d14d8a6a0416b67f001ee8"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/application-demo.properties",
+    "bytes": 173,
+    "sha256": "4c44c782a75533e0adec42bfc9950f59c6448c8ee2d40f68c3c5bb12275c5d57"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/application-mysql.properties",
+    "bytes": 297,
+    "sha256": "fc99626592aad32ffe2577aa07bcd8261ad97d09ab7f90e0daeb4db089a94f81"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/application.properties",
+    "bytes": 545,
+    "sha256": "93cca81fa628884fcd213a69a6fbb94bb7a1c3e7371849b780a85452a5458860"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/catalog-seed.json",
+    "bytes": 8121,
+    "sha256": "9f6a17b256098cab0bf9972e7276ce5b745722b48b91045680525939e8944073"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/css/app.css",
+    "bytes": 14280,
+    "sha256": "3d1ae99f78aabdf89aabc12f2a4ecf57e6e15307bc0bd498216b372bd9a9352c"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/experience/nike-orbit.html",
+    "bytes": 90675,
+    "sha256": "144717d4a59c7d13ffc6b27228b37153e18b4bd057b38437115c1dd27d010602"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/experience/runway.html",
+    "bytes": 211506,
+    "sha256": "2eb1b0871cfba204e90fc8c9fcda03d827887745f1441db29ee64a29a6e430ad"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/experience/scene-rail.html",
+    "bytes": 134981,
+    "sha256": "274f9525d3b0a526924ec7ad7d48b57073fdc39bfa8a58310ddb5f3709c96210"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/hero.json",
+    "bytes": 49,
+    "sha256": "bbb7c897317e052016cd7c062e282b6eed39bd5aef03570556e3aba185ee23f2"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/index.html",
+    "bytes": 1818,
+    "sha256": "a437c7866b1be7e34f4d5f766615a0997f3992ff31fa059edd47c411bff7ce9a"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/js/app.js",
+    "bytes": 25713,
+    "sha256": "5690db021ad21e1eadc0b73737599d7265848bef6425582e49663c1d0b80ced1"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/js/experience.js",
+    "bytes": 3779,
+    "sha256": "62a43150c24aeeb542466b9b403bcf3c6c0c8a445737d921f41d9ab4128b6772"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/01c3ed182464a6c974298f41.png",
+    "bytes": 61279,
+    "sha256": "01c3ed182464a6c974298f41e4946c7792406a333804041bfe4a4dde990b81ed"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/0489bc027ed41454dc565664.png",
+    "bytes": 41478,
+    "sha256": "0489bc027ed41454dc565664df352672247d6567c9ce01fbce5b2841ea477d21"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/064bb27c3a193fad96a9e91b.webp",
+    "bytes": 368205,
+    "sha256": "064bb27c3a193fad96a9e91bb7fefb323990dbbe1093f7d89c034d21d49b8dd4"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/067ba410b1563c04bad5a1a5.webp",
+    "bytes": 12218,
+    "sha256": "067ba410b1563c04bad5a1a51c481e7cb425079f4babe967e1a824aac4b823a7"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/0754964e7b9fe79a6f49223b.png",
+    "bytes": 83340,
+    "sha256": "0754964e7b9fe79a6f49223b834ed24dab889a6bfe290d77a7c6298d3183b543"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/094670c791259b63b8dd3faf.webp",
+    "bytes": 259032,
+    "sha256": "094670c791259b63b8dd3faf6938fb2dceff5763bd9b392016e11785ce4abd94"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/0ac8fb1f6b098de1ae629122.webp",
+    "bytes": 34702,
+    "sha256": "0ac8fb1f6b098de1ae62912225fafbd36b6a1146ecce767f88f7b9702a800505"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/0b5779dfecad5444053127d5.webp",
+    "bytes": 773283,
+    "sha256": "0b5779dfecad5444053127d576c135c905a26a6694a2a416433e9d9d2f9ad173"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/0e4faac5d3d22b669958819e.png",
+    "bytes": 77345,
+    "sha256": "0e4faac5d3d22b669958819e1e691d0eb4460c1c81db34ce6ce0d720a978c46f"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/0fec4316ef2291db71050c83.webp",
+    "bytes": 1043802,
+    "sha256": "0fec4316ef2291db71050c8399e687b9756d2ee7b7360bcc460ab3b42a6ddfee"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/114e0be5c6740bab87fbfbf2.png",
+    "bytes": 211587,
+    "sha256": "114e0be5c6740bab87fbfbf2ed79b4835f831bc116f021c5c1804fc2676dce89"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/11fd9a6e4b159005d18ec823.png",
+    "bytes": 80754,
+    "sha256": "11fd9a6e4b159005d18ec823838b0e89dd266f86b17c97a227554b3e15672e05"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/137f93b873015c62afa3c535.png",
+    "bytes": 377275,
+    "sha256": "137f93b873015c62afa3c535e6fe3cda5b231bbff3e796903604cfd97a5de4d3"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/13d7a253777a738a07264505.png",
+    "bytes": 397993,
+    "sha256": "13d7a253777a738a0726450559a6bc0aaa852aaf9f1aa52191a015ea8201c156"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/142cdfb8d091c73785babbcc.png",
+    "bytes": 63376,
+    "sha256": "142cdfb8d091c73785babbcc673ec78acb97e5ec4b8a5a521ad1f7dd4a3973e7"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/14cc514df941a5f6935a99e1.png",
+    "bytes": 260654,
+    "sha256": "14cc514df941a5f6935a99e1885c71f9f2b535df38406aa3eb086d03affa8a9a"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/15c7202c1f8fb940cd8f5d8c.jpg",
+    "bytes": 20387,
+    "sha256": "15c7202c1f8fb940cd8f5d8ced6ecb026928d604b78126411c496e16117cb31d"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/18402bc6ad1dcbd6a654c3db.webp",
+    "bytes": 306172,
+    "sha256": "18402bc6ad1dcbd6a654c3dbbe7f104afa9820c67e19754c5ce672ca94e5b698"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/19e5e71868f98be35cc64ba3.png",
+    "bytes": 364035,
+    "sha256": "19e5e71868f98be35cc64ba32193ac352c8e52fccdc3f13ba57958650f59fa45"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/1c13f1bf9a6daa0a9264e997.webp",
+    "bytes": 895019,
+    "sha256": "1c13f1bf9a6daa0a9264e997a0d28e0dc6622b9ad1018f43292eb1fe085b4535"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/1c76052bd8ac95eaa0162f45.png",
+    "bytes": 488908,
+    "sha256": "1c76052bd8ac95eaa0162f45e1a056171f87d0de72811a826701c7647ffeed4f"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/1c78ff39daa4f1dcaa860c56.webp",
+    "bytes": 44906,
+    "sha256": "1c78ff39daa4f1dcaa860c5639898d6d7fbfc73da9aeb0f78d730299284fb27c"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/22622f58d564daa221b338ca.webp",
+    "bytes": 94579,
+    "sha256": "22622f58d564daa221b338cac9fb6fef19a9f03464a0aa41bca967c74af27a6d"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/22d0e352d03845b8182fbe86.webp",
+    "bytes": 47616,
+    "sha256": "22d0e352d03845b8182fbe86b36d45e292d8b76f1aed31a1981fc3f74eb845a7"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/23d60fa465b355c21fd8c2fa.webp",
+    "bytes": 1751834,
+    "sha256": "23d60fa465b355c21fd8c2fa72437fc251da6e7c0dddc2a244791e5d898eba78"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/29a355ac8e15863e490153d1.webp",
+    "bytes": 104491,
+    "sha256": "29a355ac8e15863e490153d1101e0e6b157e7b86e0c6538b2933049642933780"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/2ae7b0fe94c845d73e0ef8f5.png",
+    "bytes": 382311,
+    "sha256": "2ae7b0fe94c845d73e0ef8f53b0e6241ff2679534cb143423abaec340deda3e3"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/2c17c0e44549397934f968b4.webp",
+    "bytes": 162924,
+    "sha256": "2c17c0e44549397934f968b45b251398d5b71c816017bb36312c65b630571a6c"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/2dd6a70a02941c0a6336fe6b.png",
+    "bytes": 406968,
+    "sha256": "2dd6a70a02941c0a6336fe6ba08f4d474e3d8edb78930b661b900a67f041f8ec"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/2f34ac39fc73e63019ff7c43.webp",
+    "bytes": 31934,
+    "sha256": "2f34ac39fc73e63019ff7c4379e923859cd2dda4ca60e54e2c8ca62d1abf1b8c"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/301de4d7d8aff70658f6c7c0.webp",
+    "bytes": 561185,
+    "sha256": "301de4d7d8aff70658f6c7c0a9e1730dc6688415a7e99e0724011a0d699e2026"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/3063654be87f8a18bed42908.png",
+    "bytes": 13518,
+    "sha256": "3063654be87f8a18bed4290889ae46f8fc3813b8ac7ea9a33d2a636638c3d492"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/3252e696001b1ca8b31a0bdf.webp",
+    "bytes": 890147,
+    "sha256": "3252e696001b1ca8b31a0bdf00a1100262fb60a83781cb64b3946508b4cb90c6"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/3432f79e72e310827682d778.webp",
+    "bytes": 325517,
+    "sha256": "3432f79e72e310827682d778f2de15b11c8f1f5e99c25c248cdffe3603d41157"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/42e6b2fb5741d1b042fe89bf.webp",
+    "bytes": 39036,
+    "sha256": "42e6b2fb5741d1b042fe89bf0340af36340b58e9fe6e366c1aaef52d6dbfa014"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/448cc11307d818b38b21e21a.png",
+    "bytes": 526838,
+    "sha256": "448cc11307d818b38b21e21a456e2f024e874df406ca52375e1171620f8944b9"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/44a62391912df366d2993e37.webp",
+    "bytes": 1603784,
+    "sha256": "44a62391912df366d2993e37f0a905594abbbcd7cbd246b416b47cb725aef8d6"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/45f4de0e1e66c15022105dc2.png",
+    "bytes": 392860,
+    "sha256": "45f4de0e1e66c15022105dc29d7ac99a193700e8a2f3bbd949068e0d838fa2fc"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/46eb501aeeb9f15bcc5a574d.webp",
+    "bytes": 544949,
+    "sha256": "46eb501aeeb9f15bcc5a574d78f5861def7c3fe40779a45f74da69a9277da851"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/4966dcd9026d037582e142f7.webp",
+    "bytes": 694517,
+    "sha256": "4966dcd9026d037582e142f7f6ee0cfb1844d989573b91ed2cc9513734dd7fd3"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/498c3e470b0739761850711d.webp",
+    "bytes": 923674,
+    "sha256": "498c3e470b0739761850711d83a3a57a0d94443463d04160efdcf284de359f25"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/49b0441bdff156aac613709e.png",
+    "bytes": 464349,
+    "sha256": "49b0441bdff156aac613709ef312df7b466d78d49d3c6249bebde09c15413135"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/49d53fea341b20609275a3f7.png",
+    "bytes": 33958,
+    "sha256": "49d53fea341b20609275a3f7e6ea2cee44d895b4437f74238db1bc334619e572"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/4e42adef53632cf4d543dd38.webp",
+    "bytes": 616613,
+    "sha256": "4e42adef53632cf4d543dd38e3d29871715e711580a89c21b0a7d5de3ca438f4"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/4f3db4f3299cb65e067ac848.webp",
+    "bytes": 283618,
+    "sha256": "4f3db4f3299cb65e067ac84885f80f90cb743e193436db602baee86f346a40c8"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/50183a72cbfe3056fbabb0dc.webp",
+    "bytes": 972899,
+    "sha256": "50183a72cbfe3056fbabb0dc89490d2bd01454adfa59db675fa15f8918787f5e"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/507a6111cdd24cbd05a25c0b.webp",
+    "bytes": 355946,
+    "sha256": "507a6111cdd24cbd05a25c0b8a37d982e744fe731793f3ebccc2c6cc4dc56a09"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/5112166ea95519e6c4c633ee.webp",
+    "bytes": 20568,
+    "sha256": "5112166ea95519e6c4c633eebca654bd320cd34d3ed434da85fc58297b0b622d"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/538e24cb95ecc08a2e0b3eba.webp",
+    "bytes": 9006,
+    "sha256": "538e24cb95ecc08a2e0b3eba14aa9eb321b5826e004a6999ddc5500c0b983d98"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/5415f22eafeca5adc910c95c.png",
+    "bytes": 35206,
+    "sha256": "5415f22eafeca5adc910c95c34d582a046a0b5054f89abd4852ff14a4a200c7f"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/5577dc1d12bd82fb636cdb89.webp",
+    "bytes": 7897,
+    "sha256": "5577dc1d12bd82fb636cdb8902d173bb42240643c12ae40d5fb282e59c2e26c5"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/560349d182754492e1a53ab1.webp",
+    "bytes": 1676756,
+    "sha256": "560349d182754492e1a53ab13068b3a49ef41271b40b2718956b4c22fe09ccf0"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/57b18a0f1ec2e7aef0d6cbe4.png",
+    "bytes": 40649,
+    "sha256": "57b18a0f1ec2e7aef0d6cbe47d700358c2867d50997a9fca5394de31b1f5d784"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/587462e063ba0e93f358b329.png",
+    "bytes": 25706,
+    "sha256": "587462e063ba0e93f358b3292fcad49782aab0bf88de50daafae27a7acb771f7"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/5aa0a0bed5b25fa4efebbb21.webp",
+    "bytes": 8821,
+    "sha256": "5aa0a0bed5b25fa4efebbb2199830d8a0dd5d9eec344d3c943fb2d9cb98b499a"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/5bac22baad4927cd88159aaf.webp",
+    "bytes": 62356,
+    "sha256": "5bac22baad4927cd88159aaf46fe33387739839d50f7b3a7f89574d45fd7ce5a"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/60f2e09e10b7a0247caadb8e.webp",
+    "bytes": 182972,
+    "sha256": "60f2e09e10b7a0247caadb8ee46f472e349d70dff19726ea99f8611fc06e36d2"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/61fb995ad8721056849c2571.png",
+    "bytes": 65780,
+    "sha256": "61fb995ad8721056849c2571e62665ce10d6185fcba29a94d421212d8df01d30"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/6a227717fa2222f834d603e6.webp",
+    "bytes": 29782,
+    "sha256": "6a227717fa2222f834d603e6b3f83186bb0ffc77880c0e7c5903c5b599192b44"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/6cde6c3e6b7d22df4caa21a0.webp",
+    "bytes": 26778,
+    "sha256": "6cde6c3e6b7d22df4caa21a0cbc02de93231cc19bd6b4de82f29e2225dfe1059"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/6d5bf0dd94fbf1d3904703a6.png",
+    "bytes": 298727,
+    "sha256": "6d5bf0dd94fbf1d3904703a6d399e441ed2b5b08a4985eee459ccfee00a52386"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/716e7161f30bb5ca09217742.png",
+    "bytes": 242006,
+    "sha256": "716e7161f30bb5ca09217742e42d5246d0b7469a9356fb6311a3a51deb41589c"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/74be886ce53eccad8ed7ee65.webp",
+    "bytes": 928819,
+    "sha256": "74be886ce53eccad8ed7ee6524d1b98e13070e6b28f2152776609dcf8ebf8da9"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/75752090efdc46bc6ab42859.png",
+    "bytes": 35680,
+    "sha256": "75752090efdc46bc6ab42859cbb959189cc88990a1769da63dba1b3c72eb4aeb"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/7741fa2964634e94960f2461.png",
+    "bytes": 347881,
+    "sha256": "7741fa2964634e94960f24612e6169a365c40c0abfdfb39fb96636a9e4021446"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/782854997970a1a5655a4799.webp",
+    "bytes": 1490065,
+    "sha256": "782854997970a1a5655a479948963c020b9af5d9635e0ae62415307be97a8504"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/78cd96e2a9f06217dd864f90.webp",
+    "bytes": 29858,
+    "sha256": "78cd96e2a9f06217dd864f903c2d0fbcf48cd0774155ee516c0c35f9ecee4096"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/7b0f3b34584867675c5aa9d2.webp",
+    "bytes": 83680,
+    "sha256": "7b0f3b34584867675c5aa9d2399875825fed7f1ce14688bb1366705b63dbcd2e"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/7bae9f8738200a7da1904c9d.png",
+    "bytes": 387745,
+    "sha256": "7bae9f8738200a7da1904c9d4d55cd326dc609772995ce853c5e98109dfd8fa5"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/7ca40f6b73ed66e07c53d668.png",
+    "bytes": 254214,
+    "sha256": "7ca40f6b73ed66e07c53d6684add0f3130e507e16f109b2e043049d436dcc35b"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/7de6545e51a94bae4a0b0c6d.webp",
+    "bytes": 1423671,
+    "sha256": "7de6545e51a94bae4a0b0c6dc3c4b2882294c248800442a030da0f02cd86a490"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/7f8db337393c2724d18264f0.webp",
+    "bytes": 166208,
+    "sha256": "7f8db337393c2724d18264f047240450820f8ca67fe2d0822c78e7c62f6ef398"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/832c4d6f0fc179a4c418052c.png",
+    "bytes": 35314,
+    "sha256": "832c4d6f0fc179a4c418052cb8e19fdd520e4f3a6e767e35322ed71f7c096ef5"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/836f6ed4d4097610a0c8a5c3.png",
+    "bytes": 304170,
+    "sha256": "836f6ed4d4097610a0c8a5c38bc6d01314e6bda0f3d469f60acc3c66556a0e1c"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/8392479313fe67e7b738703a.webp",
+    "bytes": 5311,
+    "sha256": "8392479313fe67e7b738703a100f1739000bf9696208707c13812a77b658da7a"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/8424380ab087c939a7352359.webp",
+    "bytes": 1576328,
+    "sha256": "8424380ab087c939a73523591b614c9c90948a91885921d6eb6fbbd359b24285"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/8763a0f332819cc4316ea141.webp",
+    "bytes": 613502,
+    "sha256": "8763a0f332819cc4316ea14108b8d23ac07f7b77219becc46d6ecd65cb11fe3b"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/883ada1cf3883fa3dbbb2c03.webp",
+    "bytes": 208360,
+    "sha256": "883ada1cf3883fa3dbbb2c032b7309e968f955bdd9a5938a9a39cfe3b7b24c5c"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/896c3a67d1c9b3380d689b1d.webp",
+    "bytes": 1541221,
+    "sha256": "896c3a67d1c9b3380d689b1d63155a13072fb00394d975d28921800667e9f3b0"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/8c31d6e6dd4a36f13fab4de4.webp",
+    "bytes": 141954,
+    "sha256": "8c31d6e6dd4a36f13fab4de441f85e6c3e0f98101b1f3e1af8e172be547cf10d"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/9001172da7c2d1b97ccf606c.webp",
+    "bytes": 1112090,
+    "sha256": "9001172da7c2d1b97ccf606cf3129cba8dad6df322bb41502c577a72e028b793"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/938d9e550532d9e11636643f.webp",
+    "bytes": 212379,
+    "sha256": "938d9e550532d9e11636643f8f586c8bea8603f58c50f108011e13cdeb108dab"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/94b29ac6bd13b0dfaabcea33.png",
+    "bytes": 425652,
+    "sha256": "94b29ac6bd13b0dfaabcea336f638b95ac6606c08bca3b672f110db3becacbf7"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/953d7fa397f34d6fcddb5757.webp",
+    "bytes": 29718,
+    "sha256": "953d7fa397f34d6fcddb57578d7fb0efadb01e9246638ebc156fbb5691e651f5"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/9592d3f470182c2b92d440a4.png",
+    "bytes": 81627,
+    "sha256": "9592d3f470182c2b92d440a46bfea19231b2b088f233dd52906afe2112b56024"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/970d572848c4e888edfc6666.webp",
+    "bytes": 810213,
+    "sha256": "970d572848c4e888edfc666665ec8a23faad6564ad6cb9e8ecefddb8143a3455"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/98b7e3c8c91d011785c97263.png",
+    "bytes": 60630,
+    "sha256": "98b7e3c8c91d011785c97263366325da894543095c09442ccc54ba45b239c9ae"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/98bea705196f86399c3266b6.png",
+    "bytes": 31378,
+    "sha256": "98bea705196f86399c3266b619845af44c36cb99b24f4e7549b1c46c637d40a1"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/9aa964569853328a409fa899.webp",
+    "bytes": 760386,
+    "sha256": "9aa964569853328a409fa899dcc1ea641e71fa14fa7fe7d0c706f8412a95c873"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/9dee1675f85502174b126f99.png",
+    "bytes": 197364,
+    "sha256": "9dee1675f85502174b126f99ba86484b44fa26a1aeb0d6d1851817bde751beea"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/a2c10768fe55c0dc739dc650.webp",
+    "bytes": 5218,
+    "sha256": "a2c10768fe55c0dc739dc6500ee4b6fba8f722733d2175fae6357b4c5aca0018"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/a678bc5069970e7ddcd38200.webp",
+    "bytes": 327828,
+    "sha256": "a678bc5069970e7ddcd38200cbc83df740ff468a30402eb91b3b3fd82a25d0de"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/a73863804d02843e0430f762.png",
+    "bytes": 27924,
+    "sha256": "a73863804d02843e0430f7629f93cf7a8c14230b8bcfb106804dfdd85e5731a3"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/a792af44f845afe510ccf322.webp",
+    "bytes": 323770,
+    "sha256": "a792af44f845afe510ccf3223a58ea62cc665aa29e7748d2a0b7fbcccb2f0c3c"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/a796e7c8a9cd212ce1b97433.webp",
+    "bytes": 85461,
+    "sha256": "a796e7c8a9cd212ce1b97433cd8092304136a3edb8f377b75e2061dbf2162cc8"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/aa53925cfc675c76e4e5cbd5.webp",
+    "bytes": 105058,
+    "sha256": "aa53925cfc675c76e4e5cbd575da71cad1c35961b6f1fa158c1d8b2f1da64a49"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/ab54459837baeef1c60537b5.png",
+    "bytes": 37170,
+    "sha256": "ab54459837baeef1c60537b5089b572ce17a6de525d95229551b72d505c37fbb"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/b351771f169ddaa42dc52b7c.png",
+    "bytes": 4088,
+    "sha256": "b351771f169ddaa42dc52b7cbfee1fd08b6207b119eb30bd15eecb3426ffde07"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/b69cf097db432e32b4a1bb7f.webp",
+    "bytes": 1199917,
+    "sha256": "b69cf097db432e32b4a1bb7f30c12a1f9d6b832b08938405981d1a1327eaa4a4"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/b8a90bb731e0903bd13e8629.png",
+    "bytes": 284695,
+    "sha256": "b8a90bb731e0903bd13e8629c48f41938d76466d119f69360bb60028a84dbb65"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/b9d1c43b594da827ad4e12a7.webp",
+    "bytes": 20816,
+    "sha256": "b9d1c43b594da827ad4e12a7a1df1cac3fe63487b709d02ee1b90ee2aaa736a1"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/bc086cce1ff6f5dde9518e42.webp",
+    "bytes": 979327,
+    "sha256": "bc086cce1ff6f5dde9518e42d9d541e5145cdfe906c19860f4d4152740574686"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/bc656f4b81807ffac0d7baa3.png",
+    "bytes": 59825,
+    "sha256": "bc656f4b81807ffac0d7baa3fa9fcf93d34d33e55089694b5cd6259c360cbf19"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/c010d3275db9a5bd1fd1a7b4.webp",
+    "bytes": 5674,
+    "sha256": "c010d3275db9a5bd1fd1a7b438a161ba0c043bfda44239f9b24a0be21eb096fd"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/c30394d7d5c6578643f6aad5.webp",
+    "bytes": 1473020,
+    "sha256": "c30394d7d5c6578643f6aad595b0e65a49e95a25270719cd658c270669488597"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/c46bfe1cfe7f57185fbde871.webp",
+    "bytes": 48846,
+    "sha256": "c46bfe1cfe7f57185fbde871363ddf09e172343f221ef74b3f81bc42999467c3"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/c4e4709e0d6345b89bb405fa.webp",
+    "bytes": 5448,
+    "sha256": "c4e4709e0d6345b89bb405fa64e2ec6b8d15aef65da36b160606841dd30ee0bf"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/c9b321bbb6ff43359227d2c1.png",
+    "bytes": 579589,
+    "sha256": "c9b321bbb6ff43359227d2c1b49f31977aa0c837c955c69da6a654d639ff5bd5"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/ca3e83acecdc9f36033a554f.png",
+    "bytes": 329635,
+    "sha256": "ca3e83acecdc9f36033a554fe0e988f51bc04bef716ef43fc9481602099ea748"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/ca618b29f6f0d50a79f22312.png",
+    "bytes": 13835,
+    "sha256": "ca618b29f6f0d50a79f223126d6ee141e1887395e889900a1d8263c3f0cd8eac"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/cbedf0373a5616857d1ac6ed.webp",
+    "bytes": 1563068,
+    "sha256": "cbedf0373a5616857d1ac6ed17d52384eeba07e19ea1ac08c3a8d1747e5ba6c9"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/cf06f897fb3bf00f5f20cbe7.webp",
+    "bytes": 123465,
+    "sha256": "cf06f897fb3bf00f5f20cbe730c141fe2c4030e72f3297a6ea687c36a6c47e9f"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/cfda4711b41bdd12c72e6da2.webp",
+    "bytes": 1004434,
+    "sha256": "cfda4711b41bdd12c72e6da224dc97f85c7e3dbb7ae8cc468ba32a2b58f8f103"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/d06afd9b83e1d3496dc71e7f.webp",
+    "bytes": 490395,
+    "sha256": "d06afd9b83e1d3496dc71e7fcdd19895d74372cb9f5b02629e532b1fdcae8654"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/d3a530f2731d90360d89e7bc.webp",
+    "bytes": 346317,
+    "sha256": "d3a530f2731d90360d89e7bc1bca4e6af1bcb6aa8924b4e5c8838469596fc876"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/d5b0f1401570efec7673ebd9.png",
+    "bytes": 88167,
+    "sha256": "d5b0f1401570efec7673ebd9c42b61be14bcbdb650924c506bf581a6f260cc05"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/d6afcdd1f522e5c47c1d9aa2.webp",
+    "bytes": 5177,
+    "sha256": "d6afcdd1f522e5c47c1d9aa240bd8e1caadc13cc6ffc577ee0f35192440a2803"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/d8c5b8edc0c268d1881564e0.webp",
+    "bytes": 43042,
+    "sha256": "d8c5b8edc0c268d1881564e0083a7994cf604c096b4fe2580d380b111b059e0e"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/da74346be241d2eaf8161a8f.png",
+    "bytes": 444541,
+    "sha256": "da74346be241d2eaf8161a8fe2511dd56f398e6d98feb2f560f965f3ae729d02"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/df7d03dc4478d9ecbf839deb.webp",
+    "bytes": 10083,
+    "sha256": "df7d03dc4478d9ecbf839debe413b3cf3b7c73f3256207e196115d70bdcfd490"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/dfb087d83945e5d63e4532db.png",
+    "bytes": 509265,
+    "sha256": "dfb087d83945e5d63e4532db027e5e252356fb3fdcf68ebf762ff00c6922bbfd"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/e3802dda78823b0309e49659.webp",
+    "bytes": 1528346,
+    "sha256": "e3802dda78823b0309e496594d65734c01d1a68aa1a1ed15c015a23b8f0ad335"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/e417efed83c80d436cf791fc.png",
+    "bytes": 26163,
+    "sha256": "e417efed83c80d436cf791fc47711d23278023e79aec1e4a8d90ee58a6342185"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/e863d77c4ed6d5aacee163c4.webp",
+    "bytes": 528347,
+    "sha256": "e863d77c4ed6d5aacee163c45feee7439dc5f64790a127a7fe32509bb576a11a"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/ea40b418a755a51dcf2e4930.png",
+    "bytes": 25215,
+    "sha256": "ea40b418a755a51dcf2e4930316b20aeb8f58c00700b621dc0accb0cc9ec4428"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/eb67baf0ae5e9c7e98f2f516.png",
+    "bytes": 291910,
+    "sha256": "eb67baf0ae5e9c7e98f2f516f032af279485241c97ed2838b921a5d83d60298b"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/efefb74dca913308413bc252.webp",
+    "bytes": 5079,
+    "sha256": "efefb74dca913308413bc2528a48cc1cf809dbab0bd6947242204c2aaad43ea6"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/f000cae5b1aafb9d6af6ba61.webp",
+    "bytes": 19304,
+    "sha256": "f000cae5b1aafb9d6af6ba61f83cb9928db05db4c0130257b63fa8dd0113029d"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/f216facbb447dc1cbdfd7285.webp",
+    "bytes": 26610,
+    "sha256": "f216facbb447dc1cbdfd72851dd157f4af2eaa3e182a50755e50c65778445eae"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/f42930b3726bdf67da653f87.webp",
+    "bytes": 958507,
+    "sha256": "f42930b3726bdf67da653f87b19551c6c4e2461926caffc5933e6c75ba8daa1d"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/f51805a9f296b833f8e50821.png",
+    "bytes": 41839,
+    "sha256": "f51805a9f296b833f8e5082188a83667c58302ef0f99960a006c84c353de0746"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/f602c3fc8a15f262f6801a4a.png",
+    "bytes": 527290,
+    "sha256": "f602c3fc8a15f262f6801a4acef5826204fc10a8e77dde1d099d01aca843e017"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/f757f5745cdf3b51e8d09944.webp",
+    "bytes": 1009963,
+    "sha256": "f757f5745cdf3b51e8d099447a627338c75b7021aae3f1281cc891582188bf4f"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/f78dc9b5ceec5e971804a8ee.webp",
+    "bytes": 1383462,
+    "sha256": "f78dc9b5ceec5e971804a8eeb814ce60cf31219ab8f874424120f427283204a8"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/f7dc5e8784d1eacc87e0c802.webp",
+    "bytes": 884681,
+    "sha256": "f7dc5e8784d1eacc87e0c802a05f0b37f7f2dbc81a7f4b7adcb561098f0ad655"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/f8b51ba0d5916fbd2f0c947e.png",
+    "bytes": 273579,
+    "sha256": "f8b51ba0d5916fbd2f0c947e2d299f5437d89ffcbc6ff5b89851e0b9b21519a5"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/f99e2469ea16ea6530a365b5.webp",
+    "bytes": 1560445,
+    "sha256": "f99e2469ea16ea6530a365b53c80eb5fb82864d2a413225cd83976f40fb93f8e"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/fbd5d06b103f40a607e60f3b.webp",
+    "bytes": 26914,
+    "sha256": "fbd5d06b103f40a607e60f3b71e85ed95bd1cc207161a89b68c5f8a33fa20d6e"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/fe419df0963fd54161370f4b.webp",
+    "bytes": 790504,
+    "sha256": "fe419df0963fd54161370f4b531330c03e8a4924f66d05144df191ab683bbc51"
+  },
+  {
+    "path": "RunwayStore/src/main/resources/static/media/ffdf68cee1d9adcc1df216cb.webp",
+    "bytes": 27318,
+    "sha256": "ffdf68cee1d9adcc1df216cb16454f6dbd2d1b4822911c366a7788c8156b02c9"
+  },
+  {
+    "path": "RunwayStore/src/test/java/vn/runway/store/StoreIntegrationTest.java",
+    "bytes": 7878,
+    "sha256": "8d4e1261284cb480ac779915267bdf856b79595af2b546d4ef7720034316005d"
+  },
+  {
+    "path": "RunwayStore/src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker",
+    "bytes": 20,
+    "sha256": "8eca853a5a457f17e0479b71dfbe95f2a13aff9eeff250261ecdc8ca9b847a6a"
+  },
+  {
+    "path": "RunwayStore/tools/http_smoke.py",
+    "bytes": 5316,
+    "sha256": "0db589e8be867e0f755ede46f8c12a898660be0838ce8ada8c203ba3b46f9f17"
+  },
+  {
+    "path": "RunwayStore/tools/hydrate_experiences.py",
+    "bytes": 2044,
+    "sha256": "95ac59e420cbf4d156bb4029bdb193c95753155974848b69cf8d0dd3e458ac80"
+  },
+  {
+    "path": "RunwayStore/tools/import_upstream.py",
+    "bytes": 5921,
+    "sha256": "6f22ce9774fe4d730ad893c9a113a1f592b94c54a9bbf4a5f0e9d8235b3bc2a9"
+  }
+]

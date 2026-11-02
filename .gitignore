@@ -1,0 +1,14 @@
+/target/
+/data/
+/.idea/
+*.iml
+/.env
+*.log
+/.DS_Store
+/node_modules/
+/.openai/
+/playwright-report/
+/test-results/
+*.zip
+*.bundle
+__pycache__/

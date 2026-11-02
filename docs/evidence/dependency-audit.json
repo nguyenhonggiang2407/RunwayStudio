@@ -1,0 +1,48 @@
+{
+  "runAt": "2026-11-02T11:21:22.458496+00:00",
+  "source": "https://api.osv.dev/v1/querybatch",
+  "scope": "Resolved Maven runtime dependencies; excludes undisclosed issues, application logic and container images. Raw findings remain visible even when reviewed.",
+  "packagesScanned": 81,
+  "findings": [
+    {
+      "package": "org.springframework:spring-webmvc",
+      "version": "6.2.19",
+      "id": "GHSA-j9f9-w8pj-32f8",
+      "aliases": [
+        "CVE-2026-47890"
+      ],
+      "severity": "CRITICAL",
+      "summary": "Spring Framework Server Sent Event stream corruption while rendering fragments",
+      "url": "https://osv.dev/vulnerability/GHSA-j9f9-w8pj-32f8",
+      "assessment": {
+        "id": "GHSA-j9f9-w8pj-32f8",
+        "package": "org.springframework:spring-webmvc",
+        "version": "6.2.19",
+        "status": "not_affected",
+        "vendorSeverity": "LOW",
+        "reason": "No Server-Sent Event endpoints and no view fragments. APIs return JSON and pages use explicit static forwards. Checked by ProductionConfigurationTest.",
+        "source": "https://spring.io/security/cve-2026-47890/"
+      }
+    },
+    {
+      "package": "org.springframework:spring-webmvc",
+      "version": "6.2.19",
+      "id": "GHSA-pc63-qcmh-9cmg",
+      "aliases": [
+        "CVE-2026-47884"
+      ],
+      "severity": "CRITICAL",
+      "summary": "Spring Framework Improper Path Limitation in XsltView",
+      "url": "https://osv.dev/vulnerability/GHSA-pc63-qcmh-9cmg",
+      "assessment": {
+        "id": "GHSA-pc63-qcmh-9cmg",
+        "package": "org.springframework:spring-webmvc",
+        "version": "6.2.19",
+        "status": "not_affected",
+        "vendorSeverity": "MEDIUM",
+        "reason": "No XsltViewResolver, no XSLT templates and no implicit wildcard view rendering. PageController returns explicit forward/redirect names. Checked by ProductionConfigurationTest.",
+        "source": "https://spring.io/security/cve-2026-47884/"
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+[2m[WebServer] [22m(node:273) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 12 tests using 1 worker
+
+(node:333) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:333) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [desktop-1440] › e2e/store.spec.js:61:1 › guest catalog, variant, cart and authentication boundary (2.4s)
+  ✓   2 [desktop-1440] › e2e/store.spec.js:104:1 › save reload outfit, add-all, voucher checkout and timeline (5.8s)
+  ✓   3 [desktop-1440] › e2e/store.spec.js:172:1 › scene hotspot to cart and explained shoe size (897ms)
+  ✓   4 [desktop-1440] › e2e/store.spec.js:207:1 › admin draft editor, keyboard coordinate and publish flow (1.7s)
+(node:472) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:472) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   5 [mobile-390] › e2e/store.spec.js:61:1 › guest catalog, variant, cart and authentication boundary (1.5s)
+  ✓   6 [mobile-390] › e2e/store.spec.js:104:1 › save reload outfit, add-all, voucher checkout and timeline (5.0s)
+  ✓   7 [mobile-390] › e2e/store.spec.js:172:1 › scene hotspot to cart and explained shoe size (749ms)
+  ✓   8 [mobile-390] › e2e/store.spec.js:207:1 › admin draft editor, keyboard coordinate and publish flow (2.7s)
+(node:603) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:603) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [mobile-360] › e2e/store.spec.js:61:1 › guest catalog, variant, cart and authentication boundary (1.3s)
+  ✓  10 [mobile-360] › e2e/store.spec.js:104:1 › save reload outfit, add-all, voucher checkout and timeline (6.6s)
+  ✓  11 [mobile-360] › e2e/store.spec.js:172:1 › scene hotspot to cart and explained shoe size (844ms)
+  ✓  12 [mobile-360] › e2e/store.spec.js:207:1 › admin draft editor, keyboard coordinate and publish flow (2.9s)
+
+  12 passed (43.2s)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m

@@ -1,0 +1,21 @@
+{
+  "passed": 12,
+  "checks": [
+    "packaged JAR starts and serves 11 products",
+    "all six representative frontend routes return HTTP 200",
+    "local product media is served",
+    "real CSRF + session login",
+    "customer denied admin API",
+    "two simultaneous buyers for the final item: exactly one order succeeds",
+    "server-side price and shipping calculation",
+    "HTTP retry returns existing order without duplicate stock deduction",
+    "retry preserves a new persistent cart",
+    "cancel restores stock exactly once",
+    "repeated cancellation is rejected",
+    "admin updates price and stock via real authenticated HTTP"
+  ],
+  "database": "isolated H2 in-memory",
+  "jar": "runway-store-2.0.0.jar",
+  "browserVisualQA": "separate Playwright report in docs/evidence/playwright-results.json",
+  "runAt": "2026-11-02T11:48:12.010269+00:00"
+}

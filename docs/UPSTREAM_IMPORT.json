@@ -1,0 +1,8 @@
+{
+  "source": "https://github.com/IdeaToCodee/runway",
+  "commit": "e0219d0082e31af42438ad787a73b988d5e2fa16",
+  "baselineAssetFiles": 140,
+  "baselineAssetBytes": 55000817,
+  "releasePolicy": "Unverified upstream implementations and media excluded; preserve private baseline only",
+  "replacement": "New SVG illustrations and original Studio/Scenes modules"
+}

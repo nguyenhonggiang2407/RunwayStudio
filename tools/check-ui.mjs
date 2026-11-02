@@ -1,0 +1,3 @@
+import {readdir,readFile,access} from 'node:fs/promises';import {resolve,dirname} from 'node:path';import {spawnSync} from 'node:child_process';
+async function walk(dir){const es=await readdir(dir,{withFileTypes:true});return (await Promise.all(es.map(e=>e.isDirectory()?walk(resolve(dir,e.name)):[resolve(dir,e.name)]))).flat();}
+const files=(await walk(resolve('src/main/resources/static/js'))).filter(f=>f.endsWith('.js'));for(const f of files){const s=await readFile(f,'utf8'),r=spawnSync(process.execPath,['--check',f],{encoding:'utf8'});if(r.status!==0)throw new Error(r.stderr);for(const m of s.matchAll(/from\s+['"]([^'"]+)['"]/g))if(m[1].startsWith('.'))await access(resolve(dirname(f),m[1]));}console.log(`Syntax and imports verified: ${files.length} modules.`);

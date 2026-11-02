@@ -1,0 +1,13 @@
+{
+  "release": "2.0.0-core",
+  "date": "2026-11-02",
+  "codeCommit": "4cd63add930a0999212af321b5bb04baad2c6fd4",
+  "baselineCommit": "a27fa836d6cb9223ef49bfc1e3e3d1bd613d1d7d",
+  "javaH2Passed": 78,
+  "mysqlPassed": 8,
+  "browserE2ePassed": 12,
+  "httpSmokePassed": 12,
+  "mysqlVersion": "8.4.11",
+  "hosting": "Java not deployed",
+  "dockerVerification": "not executed; configuration provided"
+}
