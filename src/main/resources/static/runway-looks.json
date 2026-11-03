@@ -1,0 +1,62 @@
+[
+  {
+    "name": "The City Edit",
+    "image": "/media/original/50183a72cbfe3056fbabb0dc.webp",
+    "preview": "/media/original/d3a530f2731d90360d89e7bc.webp",
+    "products": [
+      "tatum-5-orbit-copy",
+      "tshirt",
+      "sweatshirt"
+    ]
+  },
+  {
+    "name": "Off Duty",
+    "image": "/media/original/498c3e470b0739761850711d.webp",
+    "preview": "/media/original/a678bc5069970e7ddcd38200.webp",
+    "products": [
+      "tatum-5-orbit",
+      "hoodie-black",
+      "tshirt"
+    ]
+  },
+  {
+    "name": "Olive Hours",
+    "image": "/media/original/0fec4316ef2291db71050c83.webp",
+    "preview": "/media/original/064bb27c3a193fad96a9e91b.webp",
+    "products": [
+      "sweatshirt-plus",
+      "tatum-5-orbit",
+      "tshirt"
+    ]
+  },
+  {
+    "name": "Studio Day",
+    "image": "/media/original/0b5779dfecad5444053127d5.webp",
+    "preview": "/media/original/18402bc6ad1dcbd6a654c3db.webp",
+    "products": [
+      "hoodie-black",
+      "tatum-5-orbit-copy",
+      "tshirt"
+    ]
+  },
+  {
+    "name": "Soft Structure",
+    "image": "/media/original/1c13f1bf9a6daa0a9264e997.webp",
+    "preview": "/media/original/a792af44f845afe510ccf322.webp",
+    "products": [
+      "sweatshirt",
+      "tatum-5-orbit",
+      "tshirt"
+    ]
+  },
+  {
+    "name": "Weekend Ease",
+    "image": "/media/original/b69cf097db432e32b4a1bb7f.webp",
+    "preview": "/media/original/507a6111cdd24cbd05a25c0b.webp",
+    "products": [
+      "hoodie",
+      "air-jordan-12-retro-copy",
+      "tshirt"
+    ]
+  }
+]

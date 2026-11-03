@@ -75,19 +75,33 @@ public class StudioDemoSeed {
               case "weekend" -> "A slower kind of weekend";
               default -> "Everyday, on display";
             };
-        s.coverImage = "/media/owned/scene-" + slug + ".svg";
-        s.altText = "Minh họa một bộ phối áo, quần và giày giữa không gian kiến trúc.";
+        s.coverImage =
+            switch (slug) {
+              case "city" -> "/media/original/50183a72cbfe3056fbabb0dc.webp";
+              case "gallery" -> "/media/original/498c3e470b0739761850711d.webp";
+              default -> "/media/original/0fec4316ef2291db71050c83.webp";
+            };
+        s.altText =
+            switch (slug) {
+              case "city" -> "Ảnh người mẫu mặc áo len xám và quần jeans rộng trên nền trắng.";
+              case "gallery" -> "Ảnh người mẫu mặc áo thun trắng và quần jeans rộng trên nền trắng.";
+              default -> "Ảnh người mẫu mặc áo màu olive và quần rộng màu nâu trên nền trắng.";
+            };
         s.status = "PUBLISHED";
         s.publishedAt = Instant.now();
         scenes.saveAndFlush(s);
+        var sceneProducts =
+            slug.equals("gallery")
+                ? List.of(products.findById(10883673653553L).orElseThrow(), ps.get(1), ps.get(2))
+                : ps;
         int n = 0;
-        for (var p : ps) {
+        for (var p : sceneProducts) {
           var h = new SceneHotspot();
           h.sceneId = s.id;
           h.productId = p.id;
           h.label = p.name;
-          h.xPercent = List.of(50d, 49d, 55d).get(n);
-          h.yPercent = List.of(41d, 68d, 83d).get(n++);
+          h.xPercent = List.of(50d, 50d, 60d).get(n);
+          h.yPercent = List.of(31d, 69d, 96d).get(n++);
           hotspots.save(h);
         }
       }

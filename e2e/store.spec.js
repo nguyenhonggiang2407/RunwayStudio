@@ -37,7 +37,7 @@ async function noOverflow(page) {
 }
 async function shot(page, name, info) {
   await mkdir("docs/screenshots", { recursive: true });
-  await page.evaluate(() => scrollTo({top:0,left:0,behavior:"instant"}));
+  await page.evaluate(() => scrollTo({ top: 0, left: 0, behavior: "instant" }));
   await page.screenshot({
     path: `docs/screenshots/${name}-${info.project.name}.png`,
     fullPage: false,
@@ -49,6 +49,39 @@ test.beforeEach(async ({ page }) => {
   page.on("pageerror", (e) => errors.push(e.message));
 });
 test.afterEach(() => expect(errors).toEqual([]));
+test("original photography and six selectable runway looks", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await expect(page.locator(".runway-person")).toHaveCount(6);
+  await expect(page.locator("#look-products .look-product")).toHaveCount(3);
+  await expect(page.locator("#look-caption")).toHaveText("01 / The City Edit");
+  await expect(
+    page.locator('.runway-person[data-position="0"] img'),
+  ).toHaveAttribute("src", /\/media\/original\//);
+  await expect
+    .poll(() =>
+      page
+        .locator('.runway-person[data-position="0"] img')
+        .evaluate((image) => image.complete && image.naturalWidth > 0),
+    )
+    .toBe(true);
+  await page
+    .getByRole("button", { name: "Bộ phối tiếp theo", exact: true })
+    .click();
+  await expect(page.locator("#look-caption")).toHaveText("02 / Off Duty");
+  await expect(
+    page.locator("#look-products .look-product").first(),
+  ).toHaveAttribute("href", "/product/tatum-5-orbit");
+  await expect(
+    page.locator('.look-pagination button[aria-pressed="true"]'),
+  ).toContainText("Off Duty");
+  await page
+    .getByRole("button", { name: "Bộ phối trước", exact: true })
+    .click();
+  await expect(page.locator("#look-caption")).toHaveText("01 / The City Edit");
+  await noOverflow(page);
+});
 test("guest catalog, variant, cart and authentication boundary", async ({
   page,
 }, info) => {
