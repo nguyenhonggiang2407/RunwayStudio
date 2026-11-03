@@ -32,7 +32,12 @@ public final class Requests {
       @NotBlank @Pattern(regexp = "[a-z0-9]+(?:-[a-z0-9]+)*") @Size(max = 160) String slug,
       @NotBlank @Size(max = 60) String category,
       @Size(max = 2000) String description,
-      @NotBlank @Pattern(regexp = "/media/owned/[a-z0-9-]+\\.svg") String image,
+      @NotBlank
+          @Size(max = 240)
+          @Pattern(
+              regexp =
+                  "/media/(?:owned/[a-z0-9-]+\\.svg|original/[A-Za-z0-9][A-Za-z0-9_-]{0,199}\\.(?:png|jpe?g|webp))")
+          String image,
       boolean active) {}
 
   public record VariantInput(

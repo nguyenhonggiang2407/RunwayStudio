@@ -1,0 +1,38 @@
+{
+  "air-jordan-12-retro-copy": {
+    "image": "/media/original/142cdfb8d091c73785babbcc.png",
+    "full": "/media/original/da74346be241d2eaf8161a8f.png"
+  },
+  "blazzer": {
+    "image": "/media/original/1c78ff39daa4f1dcaa860c56.webp",
+    "full": "/media/original/896c3a67d1c9b3380d689b1d.webp"
+  },
+  "hoodie": {
+    "image": "/media/original/7b0f3b34584867675c5aa9d2.webp",
+    "full": "/media/original/f99e2469ea16ea6530a365b5.webp"
+  },
+  "hoodie-black": {
+    "image": "/media/original/42e6b2fb5741d1b042fe89bf.webp",
+    "full": "/media/original/3252e696001b1ca8b31a0bdf.webp"
+  },
+  "sweatshirt": {
+    "image": "/media/original/22d0e352d03845b8182fbe86.webp",
+    "full": "/media/original/560349d182754492e1a53ab1.webp"
+  },
+  "sweatshirt-plus": {
+    "image": "/media/original/c46bfe1cfe7f57185fbde871.webp",
+    "full": "/media/original/44a62391912df366d2993e37.webp"
+  },
+  "tatum-5-orbit": {
+    "image": "/media/original/01c3ed182464a6c974298f41.png",
+    "full": "/media/original/13d7a253777a738a07264505.png"
+  },
+  "tatum-5-orbit-copy": {
+    "image": "/media/original/bc656f4b81807ffac0d7baa3.png",
+    "full": "/media/original/7bae9f8738200a7da1904c9d.png"
+  },
+  "tshirt": {
+    "image": "/media/original/d8c5b8edc0c268d1881564e0.webp",
+    "full": "/media/original/9001172da7c2d1b97ccf606c.webp"
+  }
+}

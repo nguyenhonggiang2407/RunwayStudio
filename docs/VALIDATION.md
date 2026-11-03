@@ -1,4 +1,23 @@
-# Validation — 02/11/2026
+# Validation
+
+## 03/11/2026 — khôi phục ảnh gốc, kiểm thử local
+
+Kết quả hiện tại được đối chiếu trực tiếp từ báo cáo Maven/Playwright và các tài nguyên trong working tree. [Tóm tắt JSON](evidence/photo-restoration.json) không chứa secrets hoặc đường dẫn người dùng local.
+
+| Kiểm tra | Kết quả thực tế | Nguồn bằng chứng |
+|---|---|---|
+| Maven `clean verify` | **94/94 pass**, 7 suite; 0 failure/error/skipped | `target/surefire-reports/TEST-*.xml`; tổng đã trích vào JSON |
+| Playwright trên ứng dụng Java local | **15/15 pass**, 0 retry/flaky/skipped; Chromium, desktop 1440×1000 và mobile 390×844 / 360×800 | `docs/evidence/playwright-results.json`, `playwright.config.js` |
+| JavaScript | Syntax và import paths **13 module** pass | `npm run check` → `tools/check-ui.mjs` |
+| Media gốc | **140 file, 55.000.817 byte**, 0 SHA-256 sai khác so với manifest và inventory ZIP gốc; 9 cặp ảnh card/full và 6 ảnh người mẫu/looks; không import ảnh ngoài | `tools/check-media.mjs`, `src/main/resources/original-photo-manifest.json`, `docs/baseline-inventory.json` |
+
+Các luồng browser bao gồm ảnh gốc/sáu lựa chọn runway, catalog/variant/giỏ khách, lưu và tải outfit, add-all/voucher/checkout/timeline, hotspot/size và admin draft/publish trên cả ba viewport. Đây là kiểm thử hồi quy local, không phải audit a11y hoặc benchmark hiệu năng.
+
+[URL HTTPS hiện có](https://runwaystudio-portfolio-demo.onrender.com) đã được triển khai và xác minh ở phiên bản trước. **Phiên bản khôi phục ảnh trong working tree này còn chờ CI và xác minh triển khai trên Render**; các kết quả local ở trên không chứng minh phiên bản mới đã live. Những kết quả MySQL, dependency audit và HTTP smoke bên dưới là bằng chứng lịch sử, chưa được chạy lại trong đợt khôi phục ảnh này.
+
+## Lịch sử — 02/11/2026
+
+Phần dưới giữ lại chi tiết bàn giao ngày 02/11. Các con số và trạng thái chưa triển khai ở đây mô tả thời điểm đó; báo cáo `playwright-results.json` tại cùng đường dẫn nay đã được cập nhật bằng lần chạy 15 test ngày 03/11 nêu trên.
 
 Kết quả dưới đây được chạy thật trên bản source khôi phục. Không dùng báo cáo 16/16 trong ZIP v1 để chứng minh tính năng 2.0.
 
@@ -22,7 +41,7 @@ JAR cuối được kiểm tra ZIP integrity và đối chiếu resource/config/
 
 Browser chụp ảnh thật của storefront/Outfit/Scenes/admin trên ba viewport; no-horizontal-overflow và no-pageerror được assert trong cả 12 luồng. Đây không là audit a11y toàn diện. Ảnh không chứa credential hoặc dữ liệu thật.
 
-**Chưa xác minh / chưa làm:** Docker image và Compose chưa được chạy vì môi trường không có Docker; chưa deploy Java HTTPS, chưa video demo, chưa benchmark Lighthouse/coverage, chưa payment sandbox. Không công bố điểm số hoặc badge xanh cho các mục này. Backlog ở ROADMAP.md.
+**Chưa xác minh / chưa làm tại ngày 02/11:** Docker image và Compose chưa được chạy vì môi trường không có Docker; chưa deploy Java HTTPS, chưa video demo, chưa benchmark Lighthouse/coverage, chưa payment sandbox. Không công bố điểm số hoặc badge xanh cho các mục này. Backlog ở ROADMAP.md. Trạng thái triển khai hiện tại được tách riêng trong phần 03/11 ở đầu tài liệu.
 
 Các log nguồn có timezone của executor khác +07; ngày hiển thị cho bàn giao là 02/11/2026. `baseline/` chứa bằng chứng lịch sử v1 được đánh dấu riêng, không trộn vào kết quả release.
 

@@ -1,0 +1,136 @@
+{
+  "date": "2026-11-03",
+  "scope": "Local restored-photo working tree; these results do not assert GitHub CI success or deployment of this revision.",
+  "maven": {
+    "command": "mvnw.cmd clean verify",
+    "sources": [
+      "target/surefire-reports/TEST-*.xml"
+    ],
+    "suites": [
+      {
+        "name": "vn.runway.store.CommerceIntegrationTest",
+        "tests": 12,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "vn.runway.store.ProductionConfigurationTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "vn.runway.store.SecurityRegressionTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "vn.runway.store.StoreIntegrationTest",
+        "tests": 18,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "vn.runway.store.StudioIntegrationTest",
+        "tests": 37,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "vn.runway.store.config.AdminBootstrapTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "vn.runway.store.service.ApprovedMediaServiceTest",
+        "tests": 16,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ],
+    "totals": {
+      "tests": 94,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 94
+    }
+  },
+  "playwright": {
+    "command": "npm run test:e2e",
+    "source": "docs/evidence/playwright-results.json",
+    "startedAt": "2026-11-03T09:45:20.477Z",
+    "durationMs": 187084.612,
+    "passed": 15,
+    "failed": 0,
+    "flaky": 0,
+    "skipped": 0,
+    "retries": 0,
+    "globalErrors": 0,
+    "projects": [
+      {
+        "name": "desktop-1440",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        }
+      },
+      {
+        "name": "mobile-390",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        }
+      },
+      {
+        "name": "mobile-360",
+        "viewport": {
+          "width": 360,
+          "height": 800
+        }
+      }
+    ],
+    "viewportSource": "playwright.config.js",
+    "scenarios": [
+      "original photography and six selectable runway looks",
+      "guest catalog, variant, cart and authentication boundary",
+      "save reload outfit, add-all, voucher checkout and timeline",
+      "scene hotspot to cart and explained shoe size",
+      "admin draft editor, keyboard coordinate and publish flow"
+    ]
+  },
+  "staticChecks": {
+    "command": "npm run check",
+    "passed": true,
+    "javascriptModules": 13,
+    "originalPhotos": {
+      "count": 140,
+      "bytes": 55000817,
+      "sha256Mismatches": 0,
+      "baselineInventoryMatched": true,
+      "manifest": "src/main/resources/original-photo-manifest.json",
+      "baselineInventory": "docs/baseline-inventory.json",
+      "upstream": {
+        "repo": "https://github.com/IdeaToCodee/runway",
+        "commit": "e0219d0082e31af42438ad787a73b988d5e2fa16"
+      }
+    },
+    "productPhotoPairs": 9,
+    "modelLooks": 6,
+    "externalImageImports": false
+  },
+  "deployment": {
+    "url": "https://runwaystudio-portfolio-demo.onrender.com",
+    "previousVersion": "Previously deployed and verified separately.",
+    "restoredPhotoVersion": "Awaiting CI and deployment verification."
+  }
+}
