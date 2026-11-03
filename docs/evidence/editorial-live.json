@@ -1,0 +1,55 @@
+{
+  "checkedAt": "2026-11-03T21:23:55.177Z",
+  "sourceCommit": "4f212cd3f2481ef11a42ba87cfc62409d7c8869c",
+  "url": "https://runwaystudio-portfolio-demo.onrender.com/",
+  "status": 200,
+  "title": "Discover, Style, Save & Shop | Runway Studio",
+  "resources": [
+    {
+      "uri": "/js/pages/editorial.js",
+      "status": 200,
+      "bytes": 1374,
+      "sha256": "4b4b8efdadccec44237482c3b9785333c7f6ac8b10d225250dfd002f478c7942",
+      "matchesSource": true
+    },
+    {
+      "uri": "/js/pages/runway.js",
+      "status": 200,
+      "bytes": 5038,
+      "sha256": "548b23bd8b5823702cced3f201daa26d35bd01858148000c3ad91a82af8dabf9",
+      "matchesSource": true
+    },
+    {
+      "uri": "/css/photography.css",
+      "status": 200,
+      "bytes": 13785,
+      "sha256": "7b3efae8915fb43c1d1bc65385c59786ad5d4a8dfa2f7849b93f5542b8ebf9a7",
+      "matchesSource": true
+    },
+    {
+      "uri": "/media/licensed/city-editorial-600.webp",
+      "status": 200,
+      "bytes": 86028,
+      "sha256": "e4d994c6fc70c728ae9c7cd5af9a4b87d8dc48aa9ba49b9a64aac5baf5fe5928",
+      "matchesSource": true
+    },
+    {
+      "uri": "/media/licensed/city-editorial-1200.webp",
+      "status": 200,
+      "bytes": 264588,
+      "sha256": "b9d4759f8a48d2ef8bfcdce5841f321772ab2d071e20dcb6552f8bbf7d371e02",
+      "matchesSource": true
+    }
+  ],
+  "editorial": 1,
+  "originalLooks": 6,
+  "overflow": false,
+  "readiness": {
+    "status": 200,
+    "body": {
+      "status": "UP"
+    }
+  },
+  "mobileOverflow": false,
+  "pageErrors": []
+}

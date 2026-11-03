@@ -16,7 +16,15 @@ The full suite covers the licensed editorial/local image/CTA, original six looks
 
 An initial desktop screenshot was captured before its photo decoded. That incomplete capture was replaced by an actual browser capture after decoding, and the screenshot helper now waits for visible images. No screenshot was constructed or retouched.
 
-The historical `playwright-results.json` below remains the 15-test photo-restoration report. The new full-run log and three-test screenshot report above are separate evidence; their counts are not added together as independent coverage. Docker and MySQL were not rerun in this change; no production deployment success is implied by these local checks.
+The historical `playwright-results.json` below remains the 15-test photo-restoration report. The new full-run log and three-test screenshot report above are separate evidence; their counts are not added together as independent coverage. Docker and MySQL were not run locally in this change.
+
+### CI and public demo follow-up
+
+[GitHub Actions run 41720242244](https://github.com/nguyenhonggiang2407/RunwayStudio/actions/runs/41720242244) completed successfully on application commit `4f212cd3f2481ef11a42ba87cfc62409d7c8869c`: `java-browser`, `mysql` and `secrets` jobs all succeeded. The MySQL job is hosted CI evidence, separate from local H2 tests.
+
+On **4 November 2026**, the public demo initially timed out in HTTP checks. A later real Chromium visit loaded the new City Notes interface. Five changed/new resources (the editorial module, homepage module, photography CSS and both WebP variants) returned 200 and matched the exact SHA-256 of their Git blobs at the tested application commit. Readiness returned HTTP 200 with `UP`; six original look controls remained present; desktop 1440 and mobile 390 had no horizontal overflow or JavaScript page errors. [Read-only verification](evidence/editorial-live.json) and `live-editorial-desktop.png` / `live-editorial-mobile.png` record the result.
+
+This verifies the changed public UI resources at that time. No live account, cart, order or database write was performed; the full customer/admin flows above were tested locally. Render dashboard deploy IDs and workload metrics were not inspected because no workspace was selected. No workspace action is needed for this completed public verification.
 
 ## 03/11/2026 — khôi phục ảnh gốc, kiểm thử local
 
