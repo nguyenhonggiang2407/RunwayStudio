@@ -1,0 +1,32 @@
+# Zero-cost public portfolio demo. Ephemeral H2; do NOT use for real orders/data.
+# No Render Postgres/database or paid resources are provisioned.
+services:
+  - type: web
+    name: runwaystudio-portfolio-demo
+    runtime: docker
+    plan: free
+    region: singapore
+    branch: main
+    autoDeployTrigger: checksPass
+    healthCheckPath: /actuator/health/readiness
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: demo
+      # Override the loopback-only local demo binding for Render's reverse proxy.
+      - key: SERVER_ADDRESS
+        value: "0.0.0.0"
+      - key: SERVER_FORWARD_HEADERS_STRATEGY
+        value: framework
+      - key: SERVER_SERVLET_SESSION_COOKIE_SECURE
+        value: "true"
+      # No persistent disk is available on the Free instance.
+      # All user changes and orders will reset at an instance restart.
+      - key: SPRING_DATASOURCE_URL
+        value: "jdbc:h2:mem:runway-demo;MODE=MySQL;DB_CLOSE_DELAY=-1"
+      # Never expose the local-demo passwords on the public internet.
+      - key: RUNWAY_ADMIN_PASSWORD
+        generateValue: true
+      - key: RUNWAY_CUSTOMER_PASSWORD
+        generateValue: true
+      - key: JAVA_TOOL_OPTIONS
+        value: "-XX:MaxRAMPercentage=60 -XX:+ExitOnOutOfMemoryError"
