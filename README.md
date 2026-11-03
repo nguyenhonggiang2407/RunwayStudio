@@ -1,10 +1,16 @@
 # Runway Studio 2.0
 
-[Mã nguồn GitHub](https://github.com/nguyenhonggiang2407/RunwayStudio) · [CI đã xác minh](https://github.com/nguyenhonggiang2407/RunwayStudio/actions/runs/41466543082)
+[Live Demo](https://runwaystudio-portfolio-demo.onrender.com) · [Mã nguồn GitHub](https://github.com/nguyenhonggiang2407/RunwayStudio) · [CI đã xác minh](https://github.com/nguyenhonggiang2407/RunwayStudio/actions/runs/41580405057)
 
 **Discover, Style, Save & Shop** — một ứng dụng thương mại thời trang với Outfit Studio và Shop The Scene. Nâng cấp tăng dần từ project Java trong `RunwayStore_Fullstack_Source(1).zip`; giữ package `vn.runway.store`, session/CSRF và các API mua hàng cũ.
 
 ![Runway Studio](docs/screenshots/home-desktop-1440.png)
+
+## Live Demo
+
+Mở [Runway Studio trên Render](https://runwaystudio-portfolio-demo.onrender.com) để khám phá cửa hàng, Outfit Studio và Shop The Scene. Đăng ký một tài khoản khách mới để thử giỏ hàng và checkout COD bằng thông tin giả; mật khẩu **local demo** bên dưới không dùng được trên bản public.
+
+Bản portfolio dùng **Render Free** và H2 trong bộ nhớ. Dịch vụ có thể ngủ khi không có truy cập nên lần mở đầu có thể chậm; dữ liệu tài khoản, đơn hàng và nội dung đã lưu sẽ mất khi dịch vụ khởi động lại hoặc triển khai lại. Không nhập dữ liệu cá nhân, thanh toán hay đặt giao hàng thật. Xem [cấu hình và giới hạn demo](docs/RENDER_FREE_DEMO.md).
 
 ## Chạy nhanh
 
@@ -33,7 +39,7 @@ Profile mặc định `demo` dùng H2 lưu tại `data/runway`, chỉ lắng ngh
 | Khách | demo@runway.local | Demo@12345 |
 | Admin | admin@runway.local | Admin@12345 |
 
-Không dùng profile `demo` trên host public. Profile `mysql,prod` tắt seed, bắt buộc cấu hình DB và cookie HTTPS; không có mật khẩu admin mặc định. Đọc [hướng dẫn triển khai](docs/DEPLOYMENT.md) để tạo admin lần đầu bằng thông tin riêng.
+Không đưa cấu hình `demo` mặc định lên host public. [Blueprint Render Free](docs/RENDER_FREE_DEMO.md) dùng riêng cho demo tạm thời: ghi đè binding, bật cookie HTTPS, dùng H2 trong bộ nhớ và mật khẩu ngẫu nhiên do Render sinh. Với dữ liệu cần lưu lâu dài, dùng profile `mysql,prod` để tắt seed, cấu hình DB và cookie HTTPS; không có mật khẩu admin mặc định. Đọc [hướng dẫn triển khai](docs/DEPLOYMENT.md) để tạo admin lần đầu bằng thông tin riêng.
 
 ## Chức năng hiện có
 
@@ -86,7 +92,7 @@ Java 17 · Spring Boot 3.5.16 · Spring Security · JPA · Flyway · MySQL 8.4/H
 
 ## Phạm vi chưa hoàn tất
 
-Chưa tích hợp thanh toán sandbox, email, quy trình trả hàng, upload ảnh người dùng, tài khoản nhân viên nhiều cấp hoặc ML/AR. Fit Finder dùng bảng minh họa. UI Studio hiện tải tối đa 60 sản phẩm; API catalog có phân trang nhưng bộ chọn Studio cho catalog lớn còn là backlog. Admin UI dùng danh sách tối đa 60 sản phẩm/đơn; API phân trang riêng đã có. Chưa đo Lighthouse/coverage, chưa chạy Docker tại môi trường bàn giao, chưa triển khai Java lên host public. GitHub Actions đã chạy thành công trên mã nguồn public; xem [lần chạy đã xác minh](https://github.com/nguyenhonggiang2407/RunwayStudio/actions/runs/41466543082).
+Chưa tích hợp thanh toán sandbox, email, quy trình trả hàng, upload ảnh người dùng, tài khoản nhân viên nhiều cấp hoặc ML/AR. Fit Finder dùng bảng minh họa. UI Studio hiện tải tối đa 60 sản phẩm; API catalog có phân trang nhưng bộ chọn Studio cho catalog lớn còn là backlog. Admin UI dùng danh sách tối đa 60 sản phẩm/đơn; API phân trang riêng đã có. Chưa đo Lighthouse/coverage. Bản Live Demo dùng Docker trên Render Free với dữ liệu tạm thời; xem giới hạn ở đầu README. GitHub Actions đã chạy thành công trên mã nguồn public; xem [lần chạy đã xác minh](https://github.com/nguyenhonggiang2407/RunwayStudio/actions/runs/41580405057).
 
 Quét dependency còn hiển thị hai advisory trên Spring MVC 6.2.19; đánh giá điều kiện không áp dụng cho ứng dụng được lưu cùng test và ngày hết hạn, **không xóa cảnh báo khỏi báo cáo**. Spring Boot 3.5 đã hết OSS support; kế hoạch nâng major cần một thay đổi riêng sau release core, theo ràng buộc giữ 3.5.x của roadmap.
 
