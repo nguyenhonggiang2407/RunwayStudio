@@ -6,6 +6,8 @@
 
 ![Runway Studio](docs/screenshots/home-desktop-1440.png)
 
+Ảnh **City Notes** mới trên trang chủ là ảnh chụp thật được cấp phép từ Jonnas Duarte / Pexels, lưu local dạng WebP responsive. [Nguồn, điều kiện và checksum](docs/MEDIA_LICENSES.md). Các ảnh kế thừa vẫn được giữ nguyên và còn cần xác nhận quyền sử dụng; ảnh editorial không đại diện cho sản phẩm trong catalog.
+
 ## Live Demo
 
 Mở [Runway Studio trên Render](https://runwaystudio-portfolio-demo.onrender.com) để khám phá cửa hàng, Outfit Studio và Shop The Scene. Đăng ký một tài khoản khách mới để thử giỏ hàng và checkout COD bằng thông tin giả; mật khẩu **local demo** bên dưới không dùng được trên bản public.
@@ -60,7 +62,7 @@ Seed mới có 11 sản phẩm, 50 variant, 1 outfit curated, 3 scenes và 4 b�
 
 ## Kiểm thử
 
-Minh chứng mới ngày **02/11/2026** nằm trong [VALIDATION](docs/VALIDATION.md). Phân biệt kết quả chạy thực tế và cấu hình chưa chạy trên GitHub/Docker.
+Minh chứng mới cho ảnh editorial và kiểm thử ngày **03–04/11/2026** nằm trong [VALIDATION](docs/VALIDATION.md): Maven 94 test và browser 18 test trên ứng dụng Java thật. Kết quả local, CI và deployment được ghi riêng.
 
 ```sh
 ./mvnw clean verify

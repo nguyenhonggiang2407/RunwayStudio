@@ -38,6 +38,13 @@ async function noOverflow(page) {
 async function shot(page, name, info) {
   await mkdir("docs/screenshots", { recursive: true });
   await page.evaluate(() => scrollTo({ top: 0, left: 0, behavior: "instant" }));
+  await page.evaluate(async () => {
+    const visibleImages = [...document.images].filter((image) => {
+      const rect = image.getBoundingClientRect();
+      return rect.bottom > 0 && rect.top < innerHeight;
+    });
+    await Promise.all(visibleImages.map((image) => image.decode()));
+  });
   await page.screenshot({
     path: `docs/screenshots/${name}-${info.project.name}.png`,
     fullPage: false,
@@ -49,6 +56,17 @@ test.beforeEach(async ({ page }) => {
   page.on("pageerror", (e) => errors.push(e.message));
 });
 test.afterEach(() => expect(errors).toEqual([]));
+test("licensed editorial is local, disclosed and links to the real catalog", async ({ page }) => {
+  await page.goto("/");
+  const image = page.locator(".editorial-image img");
+  await expect(image).toHaveAttribute("srcset", /city-editorial-600\.webp 600w/);
+  await expect.poll(() => image.evaluate((img) => img.complete && img.naturalWidth > 0)).toBe(true);
+  expect((await page.request.get(await image.getAttribute("src"))).status()).toBe(200);
+  await expect(page.locator(".editorial-disclosure")).toContainText("không phải sản phẩm");
+  await noOverflow(page);
+  await page.locator(".editorial-actions .btn").click();
+  await expect(page.locator("#product-grid .product-card").first()).toBeVisible();
+});
 test("original photography and six selectable runway looks", async ({
   page,
 }) => {

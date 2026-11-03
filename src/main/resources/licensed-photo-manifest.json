@@ -1,0 +1,28 @@
+{
+  "verifiedOn": "2026-11-03",
+  "photographer": "Jonnas Duarte",
+  "source": "https://www.pexels.com/photo/man-in-brown-crew-neck-t-shirt-and-black-denim-jeans-3116018/",
+  "license": "Pexels License",
+  "licenseUrl": "https://www.pexels.com/license/",
+  "use": "Editorial fashion inspiration. Does not depict or endorse any specific catalog product. No product mapping.",
+  "photographyEvidence": "Source page lists Canon EOS Rebel T6i, photo taken 2019-07-21 and uploaded 2019-10-22.",
+  "transform": "Pexels CDN resize and WebP encoding only; no generated content or alteration to people/clothing.",
+  "files": [
+    {
+      "path": "/media/licensed/city-editorial-600.webp",
+      "width": 600,
+      "height": 900,
+      "bytes": 86028,
+      "sha256": "e4d994c6fc70c728ae9c7cd5af9a4b87d8dc48aa9ba49b9a64aac5baf5fe5928",
+      "downloadUrl": "https://images.pexels.com/photos/3116018/pexels-photo-3116018.jpeg?auto=compress&cs=tinysrgb&w=600&fm=webp"
+    },
+    {
+      "path": "/media/licensed/city-editorial-1200.webp",
+      "width": 1200,
+      "height": 1800,
+      "bytes": 264588,
+      "sha256": "b9d4759f8a48d2ef8bfcdce5841f321772ab2d071e20dcb6552f8bbf7d371e02",
+      "downloadUrl": "https://images.pexels.com/photos/3116018/pexels-photo-3116018.jpeg?auto=compress&cs=tinysrgb&w=1200&fm=webp"
+    }
+  ]
+}

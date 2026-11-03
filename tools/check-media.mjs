@@ -14,6 +14,7 @@ const manifest = await json(
 const catalog = await json(path.join(resources, "catalog-seed.json"));
 const photos = await json(path.join(staticRoot, "product-photos.json"));
 const looks = await json(path.join(staticRoot, "runway-looks.json"));
+const licensed = await json(path.join(resources, "licensed-photo-manifest.json"));
 const expectedSlugs = [
   "air-jordan-12-retro-copy",
   "blazzer",
@@ -48,6 +49,17 @@ const sourceKey = (source) => {
   );
   return url.pathname + "?v=" + url.searchParams.get("v");
 };
+
+assert.equal(licensed.licenseUrl, "https://www.pexels.com/license/");
+assert.match(licensed.source, /^https:\/\/www\.pexels\.com\/photo\/.+-3116018\/$/);
+for (const file of licensed.files) {
+  assert.match(file.path, /^\/media\/licensed\/[a-z0-9-]+\.webp$/);
+  const bytes = await readFile(resourceFile(file.path));
+  assert.equal(bytes.length, file.bytes, "licensed photo byte count");
+  assert.equal(bytes.toString("ascii", 0, 4), "RIFF");
+  assert.equal(bytes.toString("ascii", 8, 12), "WEBP");
+  assert.equal(createHash("sha256").update(bytes).digest("hex"), file.sha256);
+}
 
 assert.equal(manifest.upstream.repo, "https://github.com/IdeaToCodee/runway");
 assert.equal(
@@ -181,5 +193,5 @@ for (const file of ["hero.json", "runway-looks.json", "product-photos.json"]) {
   visit(data);
 }
 console.log(
-  "PASS: 140 original photo hashes/resources; 9 card/full pairs; 6 model looks; no external image imports.",
+  "PASS: 140 original photo hashes/resources; 2 licensed editorial variants; 9 card/full pairs; 6 model looks; no external image imports.",
 );

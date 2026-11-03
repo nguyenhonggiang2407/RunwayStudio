@@ -9,3 +9,6 @@ Chỉ các file ảnh được khôi phục. Implementation RunwaySection/ShoeOr
 Đối chiếu nguồn và checksum không xác nhận quyền sở hữu hoặc giấy phép ảnh. Không có LICENSE bao trùm được xác nhận ở commit đã kiểm tra; sự vắng mặt của LICENSE không cấp quyền cấp phép lại. Dự án giữ attribution, không tuyên bố tự tạo ảnh upstream và không cấp LICENSE mới cho các tài nguyên này.
 
 Spring Boot/Security/Data, H2, MySQL Connector/J, Flyway, Maven và Playwright giữ giấy phép và thông báo tương ứng trong các gói dependency. Không tự cấp LICENSE cho thành phần upstream chưa được phép. Dự án không tuyên bố là sản phẩm chính thức của Nike hoặc Shopify.
+## Licensed editorial addition
+
+City Notes uses Pexels photo 3116018 by Jonnas Duarte under the Pexels License. See [MEDIA_LICENSES](docs/MEDIA_LICENSES.md) for the original page, permitted use, limitations and local checksums. This permission is separate from the inherited material documented above.

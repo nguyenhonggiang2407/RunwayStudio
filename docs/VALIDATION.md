@@ -1,5 +1,23 @@
 # Validation
 
+## 04/11/2026 — licensed editorial and portfolio review
+
+The new homepage City Notes uses one real photograph under the Pexels License. The original catalog, six-look controls, Java services, seed data and schemas are unchanged. [Media license record](MEDIA_LICENSES.md).
+
+| Check actually run | Result | Evidence |
+| --- | --- | --- |
+| Java 17 / Maven `verify` | 94 tests, 0 failure/error/skipped; packaged JAR built successfully | `editorial-validation.json` summary extracted from Surefire XML; full local Maven log reviewed |
+| Full Java-app browser suite | 18/18 passed at 1440×1000, 390×844 and 360×800; no retry | [Recorded run](evidence/editorial-e2e-run.txt) |
+| Screenshot readiness follow-up | 3/3 guest-flow tests passed after making the screenshot helper await visible image decoding | [Actual report](evidence/editorial-screenshot-results.json) |
+| JavaScript and assets | 14 module syntax/import checks; 140 original SHA-256 hashes and 2 licensed WebP variants checked | `npm run check`; [summary](evidence/editorial-validation.json) |
+| Visual inspection | Homepage desktop/mobile screenshots viewed after image decoding; real live-before captures retained | `docs/screenshots/home-*.png` and `home-before-*.png` |
+
+The full suite covers the licensed editorial/local image/CTA, original six looks, guest cart/auth boundary, saved outfit/reload/add-all, voucher/COD order/timeline, scene hotspot/cart, Fit Finder and admin scene keyboard editing/publishing. No public customer data was used; Playwright runs a separate temporary H2 process on port 4187.
+
+An initial desktop screenshot was captured before its photo decoded. That incomplete capture was replaced by an actual browser capture after decoding, and the screenshot helper now waits for visible images. No screenshot was constructed or retouched.
+
+The historical `playwright-results.json` below remains the 15-test photo-restoration report. The new full-run log and three-test screenshot report above are separate evidence; their counts are not added together as independent coverage. Docker and MySQL were not rerun in this change; no production deployment success is implied by these local checks.
+
 ## 03/11/2026 — khôi phục ảnh gốc, kiểm thử local
 
 Kết quả hiện tại được đối chiếu trực tiếp từ báo cáo Maven/Playwright và các tài nguyên trong working tree. [Tóm tắt JSON](evidence/photo-restoration.json) không chứa secrets hoặc đường dẫn người dùng local.
