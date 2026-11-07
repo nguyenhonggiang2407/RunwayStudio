@@ -1,0 +1,87 @@
+{
+  "collected_at": "2026-11-06T14:53:26.020Z",
+  "application_commit": "2a4d31bd566d77e16f1edde3c043182ed3816997",
+  "environment": {
+    "os": "Windows",
+    "java": "Temurin 17.0.21+9",
+    "node": "v24.19.0"
+  },
+  "command": ".\\mvnw.cmd -B clean verify",
+  "exit_code": 0,
+  "database": "Isolated H2 only; no external database",
+  "total": {
+    "tests": 94,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "suites": [
+    {
+      "suite": "vn.runway.store.CommerceIntegrationTest",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 37.96
+    },
+    {
+      "suite": "vn.runway.store.config.AdminBootstrapTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.782
+    },
+    {
+      "suite": "vn.runway.store.ProductionConfigurationTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 5.778
+    },
+    {
+      "suite": "vn.runway.store.SecurityRegressionTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.024
+    },
+    {
+      "suite": "vn.runway.store.service.ApprovedMediaServiceTest",
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.93
+    },
+    {
+      "suite": "vn.runway.store.StoreIntegrationTest",
+      "tests": 18,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.829
+    },
+    {
+      "suite": "vn.runway.store.StudioIntegrationTest",
+      "tests": 37,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 3.437
+    }
+  ],
+  "browser": {
+    "command": "npm run test:e2e",
+    "exit_code": 0,
+    "passed": 18,
+    "failed": 0,
+    "scope": "Actual local Java application with isolated temporary H2"
+  },
+  "limitations": [
+    "Docker is not installed locally",
+    "MySQL 8.4 acceptance was not rerun locally; use current PR CI for fresh MySQL evidence"
+  ]
+}

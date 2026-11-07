@@ -1,5 +1,5 @@
 {
-  "runAt": "2026-11-02T11:21:22.458496+00:00",
+  "runAt": "2026-11-07T10:33:51.790203+00:00",
   "source": "https://api.osv.dev/v1/querybatch",
   "scope": "Resolved Maven runtime dependencies; excludes undisclosed issues, application logic and container images. Raw findings remain visible even when reviewed.",
   "packagesScanned": 81,
