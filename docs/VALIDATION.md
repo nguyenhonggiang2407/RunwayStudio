@@ -1,5 +1,7 @@
 # Validation
 
+The [RS01 baseline](RS01_BASELINE.md) records the 6 November reproduction at the inspected application commit and separates the H2, browser, MySQL and public demo evidence.
+
 ## 04/11/2026 — licensed editorial and portfolio review
 
 The new homepage City Notes uses one real photograph under the Pexels License. The original catalog, six-look controls, Java services, seed data and schemas are unchanged. [Media license record](MEDIA_LICENSES.md).
