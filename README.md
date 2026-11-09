@@ -49,7 +49,7 @@ Không đưa cấu hình `demo` mặc định lên host public. [Blueprint Rende
 |---|---|
 | Cửa hàng | Tìm kiếm, lọc danh mục/giá/tồn, phân trang và sắp xếp tại DB; truy vấn variant theo batch |
 | Giỏ hàng | Giỏ khách trong session; giỏ đăng nhập lưu DB, ghép guest một lần; thêm nhiều dòng nguyên tử |
-| Checkout | COD, snapshot giá, khóa tồn kho, idempotency theo tài khoản; retry đơn cũ giữ giỏ mới |
+| Checkout | COD, snapshot giá, khóa tồn kho. Retry giữ giỏ mới. Đơn mới trả 409 khi dùng lại mã yêu cầu với thông tin khác. |
 | Đơn hàng | Lịch sử trạng thái; chuyển trạng thái hợp lệ; hủy và hoàn tồn đúng một lần |
 | Outfit Studio | Áo/quần/giày/phụ kiện, chọn size, đổi thứ tự; lưu/tải outfit riêng tư; admin curated/public; add-all |
 | Shop The Scene | Ảnh minh họa gắn hotspot theo %, xem giá/tồn thật; admin kéo hoặc dùng phím/nhập tọa độ, draft/publish |

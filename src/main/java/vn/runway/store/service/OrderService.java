@@ -1,6 +1,8 @@
 package vn.runway.store.service;
 
 import jakarta.servlet.http.HttpSession;
+import java.io.*;
+import java.security.*;
 import java.util.*;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
@@ -61,7 +63,7 @@ public class OrderService {
   public CheckoutResult checkoutCart(Account buyer, HttpSession s, Requests.Checkout input) {
     accounts.lockById(buyer.id).orElseThrow(() -> new Missing("Tài khoản không tồn tại."));
     var old = orders.findByRequestKey(buyer.id + ":" + input.requestId());
-    if (old.isPresent()) return new CheckoutResult(old.get(), false);
+    if (old.isPresent()) return replay(old.get(), input);
     var result = checkout(buyer, carts.values(s), input);
     if (result.created()) carts.clear(s);
     return result;
@@ -72,7 +74,7 @@ public class OrderService {
     accounts.lockById(buyer.id).orElseThrow(() -> new Missing("Tài khoản không tồn tại."));
     String key = buyer.id + ":" + input.requestId();
     var old = orders.findByRequestKey(key);
-    if (old.isPresent()) return new CheckoutResult(old.get(), false);
+    if (old.isPresent()) return replay(old.get(), input);
     if (cart.isEmpty() || cart.size() > 50)
       throw new BadRequest("Giỏ hàng trống hoặc vượt giới hạn.");
     var snapshots = new ArrayList<OrderLine>();
@@ -102,6 +104,7 @@ public class OrderService {
     var o = new ShopOrder();
     o.accountId = buyer.id;
     o.requestKey = key;
+    o.requestPayloadHash = checkoutPayloadHash(input);
     o.recipient = input.recipient().strip();
     o.phone = input.phone();
     o.address = input.address().strip();
@@ -121,6 +124,33 @@ public class OrderService {
     event(o, buyer.id);
     orders.flush();
     return new CheckoutResult(o, true);
+  }
+
+  private CheckoutResult replay(ShopOrder order, Requests.Checkout input) {
+    // Orders placed before the migration have no fingerprint of the submitted payload.
+    if (order.requestPayloadHash != null
+        && !order.requestPayloadHash.equals(checkoutPayloadHash(input))) {
+      throw new CheckoutRequestConflict();
+    }
+    return new CheckoutResult(order, false);
+  }
+
+  private String checkoutPayloadHash(Requests.Checkout input) {
+    try {
+      var digest = MessageDigest.getInstance("SHA-256");
+      try (var fields =
+          new DataOutputStream(new DigestOutputStream(OutputStream.nullOutputStream(), digest))) {
+        // The validated strings are short, and writeUTF prefixes each field with its byte length.
+        fields.writeUTF(input.recipient().strip());
+        fields.writeUTF(input.phone());
+        fields.writeUTF(input.address().strip());
+        fields.writeUTF(Objects.toString(input.note(), ""));
+        fields.writeUTF(Objects.toString(PromotionService.normalizeCode(input.voucherCode()), ""));
+      }
+      return HexFormat.of().formatHex(digest.digest());
+    } catch (NoSuchAlgorithmException | IOException e) {
+      throw new IllegalStateException("Cannot fingerprint checkout payload", e);
+    }
   }
 
   private void event(ShopOrder o, Long actor) {
