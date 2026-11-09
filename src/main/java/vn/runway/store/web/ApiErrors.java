@@ -28,6 +28,12 @@ public class ApiErrors {
     }
   }
 
+  public static class CheckoutRequestConflict extends RuntimeException {
+    public CheckoutRequestConflict() {
+      super("Mã yêu cầu đã tạo đơn với thông tin khác. Hãy kiểm tra Đơn hàng trước khi đặt lại.");
+    }
+  }
+
   public record ErrorBody(
       String code, String message, Map<String, String> fieldErrors, String requestId) {}
 
@@ -57,6 +63,12 @@ public class ApiErrors {
   @ExceptionHandler(Conflict.class)
   ResponseEntity<ErrorBody> conflict(Conflict e, HttpServletRequest r) {
     return error(409, "CONFLICT", e.getMessage(), r);
+  }
+
+  @ExceptionHandler(CheckoutRequestConflict.class)
+  ResponseEntity<ErrorBody> checkoutRequestConflict(
+      CheckoutRequestConflict e, HttpServletRequest r) {
+    return error(409, "CHECKOUT_REQUEST_CONFLICT", e.getMessage(), r);
   }
 
   @ExceptionHandler(MethodArgumentNotValidException.class)

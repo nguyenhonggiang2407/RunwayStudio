@@ -6,11 +6,14 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import java.time.*;
+import java.util.Map;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.*;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,6 +29,7 @@ import vn.runway.store.repository.*;
 class CommerceIntegrationTest {
   @Autowired MockMvc mvc;
   @Autowired ObjectMapper json;
+  @Autowired JdbcTemplate db;
   @Autowired VariantRepository variants;
   @Autowired OrderRepository orders;
   @Autowired InventoryMovementRepository movements;
@@ -190,6 +194,73 @@ class CommerceIntegrationTest {
         .andExpect(jsonPath("$.item_count").value(3));
     assertThat(orders.count()).isEqualTo(1);
     assertThat(movements.count()).isEqualTo(1);
+  }
+
+  @Test
+  void sameCheckoutKeyRejectsChangedFieldsWithoutChangingCartOrOrder() throws Exception {
+    String key = "payload-conflict-test-001";
+    var original = place(key, "studio10");
+    add(new MockHttpSession(), 3);
+
+    var changedFields = Map.of(
+            "recipient", "Another Customer",
+            "phone", "0987654321",
+            "address", "25 Other Street, Hanoi",
+            "note", "Ring the bell",
+            "voucherCode", "DIFFERENT");
+    for (var change : changedFields.entrySet()) {
+      var changed = json.readValue(input(key, "STUDIO10"), ObjectNode.class);
+      changed.put(change.getKey(), change.getValue());
+      mvc.perform(
+              post("/api/checkout")
+                  .with(user(USER))
+                  .with(csrf())
+                  .contentType("application/json")
+                  .content(changed.toString()))
+          .andExpect(status().isConflict())
+          .andExpect(jsonPath("$.code").value("CHECKOUT_REQUEST_CONFLICT"));
+    }
+
+    var equivalent = json.readValue(input(key, " studio10 "), ObjectNode.class);
+    equivalent.put("recipient", " Demo Customer ");
+    equivalent.put("address", "12 Test Street, Hanoi ");
+    equivalent.put("note", "");
+    mvc.perform(
+            post("/api/checkout")
+                .with(user(USER))
+                .with(csrf())
+                .contentType("application/json")
+                .content(equivalent.toString()))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.order.id").value(original.path("order").path("id").asLong()));
+    mvc.perform(get("/api/cart").with(user(USER))).andExpect(jsonPath("$.item_count").value(3));
+    assertThat(orders.count()).isEqualTo(1);
+    assertThat(movements.count()).isEqualTo(1);
+    assertThat(promotions.findByCode("STUDIO10").orElseThrow().used).isEqualTo(1);
+  }
+
+  @Test
+  void checkoutCanReplayOrdersCreatedBeforePayloadFingerprints() throws Exception {
+    String key = "legacy-replay-test-001";
+    long accountId = db.queryForObject("select id from accounts where email=?", Long.class, USER);
+    db.update(
+        """
+        insert into shop_orders
+          (account_id,request_key,recipient,phone,address,status,subtotal,shipping,total,created_at)
+        values (?,?,?,?,?,'PLACED',100000,30000,130000,CURRENT_TIMESTAMP)
+        """,
+        accountId, accountId + ":" + key, "Old Recipient", "0912345678", "Old Street, Hanoi");
+
+    mvc.perform(
+            post("/api/checkout")
+                .with(user(USER))
+                .with(csrf())
+                .contentType("application/json")
+                .content(input(key, "")))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.order.recipient").value("Old Recipient"));
+    assertThat(orders.count()).isEqualTo(1);
+    assertThat(movements.count()).isZero();
   }
 
   @Test

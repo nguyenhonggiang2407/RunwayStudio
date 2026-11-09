@@ -223,10 +223,14 @@ document.addEventListener("submit", (e) => {
             fingerprint: state.checkoutFingerprint,
           };
         sessionStorage.setItem("checkout-request", JSON.stringify(pending));
-        const r = await send("/api/checkout", {
-          ...data,
-          requestId: pending.id,
-        });
+        let r;
+        try {
+          r = await send("/api/checkout", { ...data, requestId: pending.id });
+        } catch (error) {
+          if (error.code === "CHECKOUT_REQUEST_CONFLICT")
+            sessionStorage.removeItem("checkout-request");
+          throw error;
+        }
         sessionStorage.removeItem("checkout-request");
         await updateCount();
         app.innerHTML = `<section class="content-wrap"><div class="empty"><div class="success-icon">✓</div><span class="eyebrow">THANK YOU</span><h1>Đặt hàng thành công.</h1><p>Đơn RW-${String(r.order.id).padStart(5, "0")} đã được lưu.<br>Thanh toán khi nhận hàng: ${money(r.order.total)}.</p><a class="btn" href="/orders">Theo dõi đơn hàng ↗</a></div></section>`;

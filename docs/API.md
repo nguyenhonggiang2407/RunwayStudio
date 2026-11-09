@@ -41,7 +41,9 @@ Price filter chọn sản phẩm có ít nhất một variant trong khoảng; gi
 
 GET cart có thể ghép giỏ guest sẵn có vào giỏ account một lần sau đăng nhập; đây là side effect hiện tại được kiểm thử. Client không gửi accountId hoặc price để điều khiển việc ghép. Giỏ guest được giữ lại khi merge thất bại; có thể DELETE cart để chủ động xóa giỏ.
 
-Checkout trả `{order,items,history}`. Idempotency scope account + requestId. Retry cùng ID trả đơn đã tạo và không xóa giỏ mới; không đặt lại hàng bằng cách tái sử dụng ID cũ. Sau thay giỏ, client tạo requestId mới. Phí 30.000 cho subtotal <2.000.000, miễn từ ngưỡng; tính theo subtotal trước discount. Voucher là % có cap/min/expiry/limit, một redemption/account. Hủy không khôi phục lượt voucher (chính sách hiện tại); tồn hoàn đúng một lần.
+Checkout trả `{order,items,history}`. Với đơn mới, server lưu fingerprint của thông tin nhận hàng, ghi chú và mã ưu đãi theo `accountId:requestId`. Retry cùng ID và cùng nội dung trả đơn đã tạo, giữ nguyên giỏ mới. Tên và địa chỉ bỏ khoảng trắng hai đầu, mã ưu đãi bỏ khoảng trắng và chuyển sang chữ hoa, ghi chú rỗng tương đương bỏ trống. Số điện thoại và nội dung ghi chú được so sánh nguyên trạng. Cùng ID với thông tin khác trả `409 CHECKOUT_REQUEST_CONFLICT`. Đơn trước migration V4 chưa có fingerprint và vẫn trả đơn cũ theo ID.
+
+Giỏ hiện tại không tham gia so sánh vì checkout thành công đã làm trống giỏ cũ. Client dùng ID mới cho lần mua mới. Khi giao diện nhận xung đột, nó nhắc người dùng kiểm tra Đơn hàng. Lần bấm xác nhận tiếp theo tạo ID mới. Phí 30.000 cho subtotal <2.000.000, miễn từ ngưỡng và tính theo subtotal trước giảm giá. Voucher là % có cap/min/expiry/limit, một redemption/account. Khi hủy, lượt voucher đã dùng được giữ nguyên và tồn hoàn đúng một lần.
 
 Transitions: PLACED→CONFIRMED/CANCELLED; CONFIRMED→SHIPPED/CANCELLED; SHIPPED→DELIVERED. Customer chỉ hủy PLACED. Snapshot giữ tên/giá/ảnh/size lúc đặt.
 

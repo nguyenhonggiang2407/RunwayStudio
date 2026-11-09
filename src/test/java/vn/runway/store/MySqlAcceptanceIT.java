@@ -211,6 +211,8 @@ class MySqlAcceptanceIT {
     assertThat(j.queryForObject("select count(*) from order_status_history", Long.class))
         .isEqualTo(1);
     assertThat(j.queryForObject("select discount from shop_orders", Long.class)).isZero();
+    assertThat(j.queryForObject("select request_payload_hash from shop_orders", String.class))
+        .isNull();
     assertThatThrownBy(() -> j.update("insert into variants values(993,99999,'M',123000,5,0)"))
         .isInstanceOf(org.springframework.dao.DataIntegrityViolationException.class);
   }

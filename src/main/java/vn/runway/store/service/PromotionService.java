@@ -34,10 +34,14 @@ public class PromotionService {
     return subtotal == 0 || subtotal >= 2000000 ? 0 : 30000;
   }
 
+  static String normalizeCode(String code) {
+    return code == null || code.isBlank() ? null : code.strip().toUpperCase(Locale.ROOT);
+  }
+
   @Transactional(propagation = Propagation.MANDATORY)
   public Discount check(String code, long subtotal, Long buyer, boolean lock) {
-    if (code == null || code.isBlank()) return new Discount(null, 0);
-    String key = code.strip().toUpperCase(Locale.ROOT);
+    String key = normalizeCode(code);
+    if (key == null) return new Discount(null, 0);
     var p =
         (lock ? codes.lockByCode(key) : codes.findByCode(key))
             .orElseThrow(() -> new BadRequest("Mã ưu đãi không hợp lệ."));

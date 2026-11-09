@@ -16,6 +16,9 @@ public class ShopOrder {
   @Column(nullable = false, unique = true, length = 150)
   public String requestKey;
 
+  @Column(length = 64)
+  public String requestPayloadHash;
+
   @Column(nullable = false, length = 100)
   public String recipient;
 
