@@ -27,7 +27,7 @@ import vn.runway.store.repository.*;
     })
 @AutoConfigureMockMvc
 @Transactional
-class StudioIntegrationTest {
+class StudioIntegrationTest extends DemoAccountFixtures {
   @Autowired MockMvc mvc;
   @Autowired ObjectMapper json;
   @Autowired VariantRepository variants;

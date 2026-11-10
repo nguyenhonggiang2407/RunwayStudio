@@ -23,7 +23,7 @@ import vn.runway.store.repository.*;
     })
 @AutoConfigureMockMvc
 @Transactional
-class StoreIntegrationTest {
+class StoreIntegrationTest extends DemoAccountFixtures {
   @Autowired MockMvc mvc;
   @Autowired VariantRepository variants;
   @Autowired OrderRepository orders;
@@ -257,7 +257,9 @@ class StoreIntegrationTest {
                 post("/api/login")
                     .with(csrf())
                     .contentType("application/json")
-                    .content("{\"email\":\"demo@runway.local\",\"password\":\"Demo@12345\"}"))
+                    .content(
+                        "{\"email\":\"demo@runway.local\",\"password\":\""
+                            + CUSTOMER_FIXTURE_PASSWORD + "\"}"))
             .andExpect(status().isOk())
             .andReturn();
     mvc.perform(get("/api/me").session((MockHttpSession) r.getRequest().getSession()))

@@ -4,6 +4,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,6 +15,7 @@ import vn.runway.store.repository.AccountRepository;
  * Explicit one-off provisioning. Remove the environment password after first successful startup.
  */
 @Component
+@Profile("!portfolio-demo")
 public class AdminBootstrap implements CommandLineRunner {
   private final AccountRepository accounts;
   private final PasswordEncoder encoder;
