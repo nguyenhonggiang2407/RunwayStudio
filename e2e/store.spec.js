@@ -67,6 +67,29 @@ test("licensed editorial is local, disclosed and links to the real catalog", asy
   await page.locator(".editorial-actions .btn").click();
   await expect(page.locator("#product-grid .product-card").first()).toBeVisible();
 });
+test("everyday photo cards credit real sources and open the relevant catalog filters", async ({ page }) => {
+  await page.goto("/");
+  const edit = page.getByRole("region", { name: "Mặc gì, mang gì?" });
+  const images = edit.getByRole("img");
+  await expect(images).toHaveCount(2);
+  for (const image of await images.all()) {
+    await image.scrollIntoViewIfNeeded();
+    await expect.poll(() => image.evaluate((img) => img.complete && img.naturalWidth > 0)).toBe(true);
+    expect(new URL(await image.evaluate((img) => img.currentSrc)).pathname).toMatch(
+      /^\/media\/licensed\/(wardrobe-rail|everyday-tote)-(480|960)\.webp$/,
+    );
+  }
+  await expect(edit.getByRole("link", { name: "Alena Darmel / Pexels" })).toHaveAttribute("href", /8989864\/$/);
+  await expect(edit.getByRole("link", { name: "Vie Studio / Pexels" })).toHaveAttribute("href", /8148587\/$/);
+  await noOverflow(page);
+  await edit.getByRole("link", { name: "Xem áo khoác" }).click();
+  await expect(page.getByRole("combobox", { name: "Danh mục" })).toHaveValue("Áo khoác");
+  await expect(page.locator("#product-grid .product-card .category")).toHaveText(["Áo khoác", "Áo khoác", "Áo khoác"]);
+  await page.goto("/");
+  await edit.getByRole("link", { name: "Xem phụ kiện" }).click();
+  await expect(page.getByRole("combobox", { name: "Danh mục" })).toHaveValue("Phụ kiện");
+  await expect(page.locator("#product-grid .product-card .category")).toHaveText(["Phụ kiện"]);
+});
 test("original photography and six selectable runway looks", async ({
   page,
 }) => {

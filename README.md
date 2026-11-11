@@ -8,6 +8,12 @@
 
 Ảnh **City Notes** mới trên trang chủ là ảnh chụp thật được cấp phép từ Jonnas Duarte / Pexels, lưu local dạng WebP responsive. [Nguồn, điều kiện và checksum](docs/MEDIA_LICENSES.md). Các ảnh kế thừa vẫn được giữ nguyên và còn cần xác nhận quyền sử dụng; ảnh editorial không đại diện cho sản phẩm trong catalog.
 
+Trang chủ có mục **Mặc gì, mang gì?** với ảnh chụp tủ quần áo và túi tote. Các nút mở danh mục áo khoác và phụ kiện trong demo. [Nguồn ảnh và giấy phép](docs/MEDIA_LICENSES.md)
+
+![Hai gợi ý phối đồ và phụ kiện ở giao diện desktop](docs/screenshots/everyday-edit-desktop.jpg)
+
+[Xem giao diện trên điện thoại](docs/screenshots/everyday-edit-mobile.jpg)
+
 ## Live Demo
 
 Mở [Runway Studio trên Render](https://runwaystudio-portfolio-demo.onrender.com) để khám phá cửa hàng, Outfit Studio và Shop The Scene. Đăng ký một tài khoản khách mới để thử giỏ hàng và checkout COD bằng thông tin giả; mật khẩu **local demo** bên dưới không dùng được trên bản public.

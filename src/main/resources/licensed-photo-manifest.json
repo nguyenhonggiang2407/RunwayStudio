@@ -24,5 +24,57 @@
       "sha256": "b9d4759f8a48d2ef8bfcdce5841f321772ab2d071e20dcb6552f8bbf7d371e02",
       "downloadUrl": "https://images.pexels.com/photos/3116018/pexels-photo-3116018.jpeg?auto=compress&cs=tinysrgb&w=1200&fm=webp"
     }
+  ],
+  "relatedPhotos": [
+    {
+      "verifiedOn": "2026-11-11",
+      "photographer": "Alena Darmel",
+      "source": "https://www.pexels.com/photo/close-up-of-a-clothing-rack-8989864/",
+      "photographyEvidence": "Pexels source page lists Canon EOS 5D Mark IV.",
+      "use": "Editorial reference only. No catalog mapping.",
+      "files": [
+        {
+          "path": "/media/licensed/wardrobe-rail-480.webp",
+          "width": 480,
+          "height": 720,
+          "bytes": 27832,
+          "sha256": "d9bacb4ef3c40116b3cf277518155fddf7c3e26854e90f776860d47f2f85f05d",
+          "downloadUrl": "https://images.pexels.com/photos/8989864/pexels-photo-8989864.jpeg?auto=compress&cs=tinysrgb&w=480&fm=webp"
+        },
+        {
+          "path": "/media/licensed/wardrobe-rail-960.webp",
+          "width": 960,
+          "height": 1440,
+          "bytes": 69768,
+          "sha256": "4127ef437b2f9de5f49cb7e552cf798a93f0e0484c479d8ab7a6ed75f38de83c",
+          "downloadUrl": "https://images.pexels.com/photos/8989864/pexels-photo-8989864.jpeg?auto=compress&cs=tinysrgb&w=960&fm=webp"
+        }
+      ]
+    },
+    {
+      "verifiedOn": "2026-11-11",
+      "photographer": "Vie Studio",
+      "source": "https://www.pexels.com/photo/brown-tote-bag-on-white-table-8148587/",
+      "photographyEvidence": "Pexels source page lists Fujifilm X-T3.",
+      "use": "Editorial reference only. No catalog mapping.",
+      "files": [
+        {
+          "path": "/media/licensed/everyday-tote-480.webp",
+          "width": 480,
+          "height": 720,
+          "bytes": 16954,
+          "sha256": "5f0192ac6c1a3c0bfe0fb0ee2d920007cb823cd8d8cdef7bc584db420f2d7a45",
+          "downloadUrl": "https://images.pexels.com/photos/8148587/pexels-photo-8148587.jpeg?auto=compress&cs=tinysrgb&w=480&fm=webp"
+        },
+        {
+          "path": "/media/licensed/everyday-tote-960.webp",
+          "width": 960,
+          "height": 1440,
+          "bytes": 58138,
+          "sha256": "8a8c5d607b0f20639fab4e64a8c4d7b87ca3ae3037f671d5dc6978102995f615",
+          "downloadUrl": "https://images.pexels.com/photos/8148587/pexels-photo-8148587.jpeg?auto=compress&cs=tinysrgb&w=960&fm=webp"
+        }
+      ]
+    }
   ]
 }
