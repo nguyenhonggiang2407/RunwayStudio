@@ -1,6 +1,6 @@
 # Runway Studio 2.0
 
-[Live Demo](https://runwaystudio-portfolio-demo.onrender.com) · [Mã nguồn GitHub](https://github.com/nguyenhonggiang2407/RunwayStudio) · [CI đã xác minh](https://github.com/nguyenhonggiang2407/RunwayStudio/actions/runs/41720242244)
+[Ảnh cửa hàng](docs/screenshots/home-desktop-1440.png) · [Kịch bản demo](docs/demo-script.md) · [Live Demo](https://runwaystudio-portfolio-demo.onrender.com) · [GitHub Actions](https://github.com/nguyenhonggiang2407/RunwayStudio/actions/workflows/ci.yml)
 
 **Discover, Style, Save & Shop** — một ứng dụng thương mại thời trang với Outfit Studio và Shop The Scene. Nâng cấp tăng dần từ project Java trong `RunwayStore_Fullstack_Source(1).zip`; giữ package `vn.runway.store`, session/CSRF và các API mua hàng cũ.
 
@@ -10,9 +10,11 @@
 
 ## Live Demo
 
-Mở [Runway Studio trên Render](https://runwaystudio-portfolio-demo.onrender.com) để khám phá cửa hàng, Outfit Studio và Shop The Scene. Đăng ký một tài khoản khách mới để thử giỏ hàng và checkout COD bằng thông tin giả; mật khẩu **local demo** bên dưới không dùng được trên bản public.
+Mở [Runway Studio trên Render](https://runwaystudio-portfolio-demo.onrender.com) để khám phá cửa hàng, Outfit Studio và Shop The Scene. Đăng ký tài khoản khách để thử giỏ hàng và checkout COD với thông tin giả. Tài khoản portfolio dùng chung được cấu hình riêng cho demo local theo hướng dẫn bên dưới.
 
 Bản portfolio dùng **Render Free** và H2 trong bộ nhớ. Dịch vụ có thể ngủ khi không có truy cập nên lần mở đầu có thể chậm; dữ liệu tài khoản, đơn hàng và nội dung đã lưu sẽ mất khi dịch vụ khởi động lại hoặc triển khai lại. Không nhập dữ liệu cá nhân, thanh toán hay đặt giao hàng thật. Xem [cấu hình và giới hạn demo](docs/RENDER_FREE_DEMO.md).
+
+Khi bản Render hết thời gian chờ, có thể xem [ảnh cửa hàng](docs/screenshots/home-desktop-1440.png), đọc [sơ đồ checkout](docs/ARCHITECTURE.md#checkout-đường-đọc-mã-và-bằng-chứng) hoặc chạy JAR cục bộ theo hướng dẫn bên dưới.
 
 ## Chạy nhanh
 
@@ -34,12 +36,17 @@ java -jar target\runway-store-2.0.0.jar
 
 Mở **http://localhost:8080**. Có thể chạy `RUN_DEMO.sh` hoặc `RUN_DEMO.bat`. Với JAR tải riêng: `java -jar runway-store-2.0.0.jar`.
 
-Profile mặc định `demo` dùng H2 lưu tại `data/runway`, chỉ lắng nghe loopback. Tài khoản **chỉ dành cho local demo**:
+Profile mặc định `demo` dùng H2 lưu tại `data/runway`, chỉ lắng nghe loopback. Catalog mẫu được tạo lúc khởi động. Bạn có thể đăng ký một tài khoản khách, hoặc đặt `RUNWAY_CUSTOMER_PASSWORD` cho khách thử `demo@runway.local`. Biến riêng `RUNWAY_ADMIN_PASSWORD` chỉ dành cho thử quản trị local. Cả hai biến đều không có mật khẩu mặc định.
 
-| Quyền | Email | Mật khẩu local |
-|---|---|---|
-| Khách | demo@runway.local | Demo@12345 |
-| Admin | admin@runway.local | Admin@12345 |
+### Tài khoản portfolio dùng chung
+
+Đặt `RUNWAY_PORTFOLIO_DEMO_EMAIL` và `RUNWAY_PORTFOLIO_DEMO_PASSWORD` trong môi trường của tiến trình rồi chạy:
+
+```sh
+java -jar target/runway-store-2.0.0.jar --spring.profiles.active=portfolio-demo
+```
+
+Profile này tạo một tài khoản **CUSTOMER** dùng BCrypt và chạy trên H2 trong bộ nhớ. Đăng nhập bằng thông tin đã cấu hình để thử giỏ hàng, checkout COD và outfit riêng. API quản trị yêu cầu quyền ADMIN. Khởi động lại tạo môi trường mẫu mới. Xem [hướng dẫn triển khai](docs/DEPLOYMENT.md) để nhập biến mà không ghi thông tin đăng nhập vào lịch sử lệnh.
 
 Không đưa cấu hình `demo` mặc định lên host public. [Blueprint Render Free](docs/RENDER_FREE_DEMO.md) dùng riêng cho demo tạm thời: ghi đè binding, bật cookie HTTPS, dùng H2 trong bộ nhớ và mật khẩu ngẫu nhiên do Render sinh. Với dữ liệu cần lưu lâu dài, dùng profile `mysql,prod` để tắt seed, cấu hình DB và cookie HTTPS; không có mật khẩu admin mặc định. Đọc [hướng dẫn triển khai](docs/DEPLOYMENT.md) để tạo admin lần đầu bằng thông tin riêng.
 

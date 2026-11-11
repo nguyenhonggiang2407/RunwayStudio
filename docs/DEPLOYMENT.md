@@ -4,6 +4,33 @@
 
 `./mvnw clean verify` rồi `java -jar target/runway-store-2.0.0.jar`. Windows dùng `mvnw.cmd`. Profile `demo` lắng nghe 127.0.0.1:8080, seed giả, dữ liệu H2 trong `data/`. Dừng ứng dụng trước khi sao lưu file H2; không copy một file DB đang ghi.
 
+### Demo portfolio với tài khoản CUSTOMER
+
+Dùng thông tin được cấp cho môi trường demo. Với Bash:
+
+```bash
+read -rp 'Email demo: ' RUNWAY_PORTFOLIO_DEMO_EMAIL
+read -rsp 'Mật khẩu demo: ' RUNWAY_PORTFOLIO_DEMO_PASSWORD
+printf '\n'
+export RUNWAY_PORTFOLIO_DEMO_EMAIL RUNWAY_PORTFOLIO_DEMO_PASSWORD
+java -jar target/runway-store-2.0.0.jar --spring.profiles.active=portfolio-demo
+unset RUNWAY_PORTFOLIO_DEMO_EMAIL RUNWAY_PORTFOLIO_DEMO_PASSWORD
+```
+
+Với PowerShell 7:
+
+```powershell
+$env:RUNWAY_PORTFOLIO_DEMO_EMAIL = Read-Host 'Email demo'
+$env:RUNWAY_PORTFOLIO_DEMO_PASSWORD = Read-Host 'Mật khẩu demo' -MaskInput
+try {
+  java -jar target\runway-store-2.0.0.jar --spring.profiles.active=portfolio-demo
+} finally {
+  Remove-Item Env:RUNWAY_PORTFOLIO_DEMO_EMAIL, Env:RUNWAY_PORTFOLIO_DEMO_PASSWORD
+}
+```
+
+Profile `portfolio-demo` lắng nghe localhost và yêu cầu H2 trong bộ nhớ. Khi dừng tiến trình, dữ liệu demo mất và lần khởi động sau seed lại. Seed giữ tài khoản có sẵn nếu email, quyền và mật khẩu đã khớp. Xung đột khiến khởi động dừng, tránh ghi đè tài khoản. `mysql,prod` dùng cấu hình production riêng. Blueprint Render hiện dùng profile `demo` riêng và cung cấp thông tin đăng nhập ngẫu nhiên.
+
 ## MySQL 8.4 mới
 
 Tạo database utf8mb4 và user riêng có quyền với schema này. Đặt biến môi trường ngoài repository:
