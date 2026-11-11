@@ -1,6 +1,6 @@
 # Runway Studio 2.0
 
-[Live Demo](https://runwaystudio-portfolio-demo.onrender.com) · [Mã nguồn GitHub](https://github.com/nguyenhonggiang2407/RunwayStudio) · [CI đã xác minh](https://github.com/nguyenhonggiang2407/RunwayStudio/actions/runs/41720242244)
+[Ảnh cửa hàng](docs/screenshots/home-desktop-1440.png) · [Kịch bản demo](docs/demo-script.md) · [Live Demo](https://runwaystudio-portfolio-demo.onrender.com) · [GitHub Actions](https://github.com/nguyenhonggiang2407/RunwayStudio/actions/workflows/ci.yml)
 
 **Discover, Style, Save & Shop** — một ứng dụng thương mại thời trang với Outfit Studio và Shop The Scene. Nâng cấp tăng dần từ project Java trong `RunwayStore_Fullstack_Source(1).zip`; giữ package `vn.runway.store`, session/CSRF và các API mua hàng cũ.
 
@@ -13,6 +13,8 @@
 Mở [Runway Studio trên Render](https://runwaystudio-portfolio-demo.onrender.com) để khám phá cửa hàng, Outfit Studio và Shop The Scene. Đăng ký tài khoản khách để thử giỏ hàng và checkout COD với thông tin giả. Tài khoản portfolio dùng chung được cấu hình riêng cho demo local theo hướng dẫn bên dưới.
 
 Bản portfolio dùng **Render Free** và H2 trong bộ nhớ. Dịch vụ có thể ngủ khi không có truy cập nên lần mở đầu có thể chậm; dữ liệu tài khoản, đơn hàng và nội dung đã lưu sẽ mất khi dịch vụ khởi động lại hoặc triển khai lại. Không nhập dữ liệu cá nhân, thanh toán hay đặt giao hàng thật. Xem [cấu hình và giới hạn demo](docs/RENDER_FREE_DEMO.md).
+
+Khi bản Render hết thời gian chờ, có thể xem [ảnh cửa hàng](docs/screenshots/home-desktop-1440.png), đọc [sơ đồ checkout](docs/ARCHITECTURE.md#checkout-đường-đọc-mã-và-bằng-chứng) hoặc chạy JAR cục bộ theo hướng dẫn bên dưới.
 
 ## Chạy nhanh
 
