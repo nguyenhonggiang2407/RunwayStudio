@@ -52,7 +52,14 @@ const sourceKey = (source) => {
 
 assert.equal(licensed.licenseUrl, "https://www.pexels.com/license/");
 assert.match(licensed.source, /^https:\/\/www\.pexels\.com\/photo\/.+-3116018\/$/);
-for (const file of licensed.files) {
+assert.deepEqual(
+  licensed.relatedPhotos.map((photo) => new URL(photo.source).pathname.split("-").at(-1)),
+  ["8989864/", "8148587/"],
+);
+const licensedFiles = [licensed, ...licensed.relatedPhotos].flatMap((photo) => photo.files);
+const licensedNames = await readdir(path.join(staticRoot, "media/licensed"));
+assert.deepEqual(licensedNames.sort(), licensedFiles.map((file) => path.basename(file.path)).sort());
+for (const file of licensedFiles) {
   assert.match(file.path, /^\/media\/licensed\/[a-z0-9-]+\.webp$/);
   const bytes = await readFile(resourceFile(file.path));
   assert.equal(bytes.length, file.bytes, "licensed photo byte count");
@@ -193,5 +200,5 @@ for (const file of ["hero.json", "runway-looks.json", "product-photos.json"]) {
   visit(data);
 }
 console.log(
-  "PASS: 140 original photo hashes/resources; 2 licensed editorial variants; 9 card/full pairs; 6 model looks; no external image imports.",
+  "PASS: 140 original photo hashes/resources; 6 licensed editorial variants; 9 card/full pairs; 6 model looks; no external image imports.",
 );

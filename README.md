@@ -4,9 +4,21 @@
 
 **Discover, Style, Save & Shop** — một ứng dụng thương mại thời trang với Outfit Studio và Shop The Scene. Nâng cấp tăng dần từ project Java trong `RunwayStore_Fullstack_Source(1).zip`; giữ package `vn.runway.store`, session/CSRF và các API mua hàng cũ.
 
+## Xem nhanh dự án
+
+- **Xem giao diện** trên [desktop](docs/screenshots/home-desktop-1440.png) hoặc [điện thoại](docs/screenshots/home-mobile-360.png). Có thể [mở demo Render](#live-demo) hoặc [chạy cục bộ](#chạy-nhanh) khi demo cần thời gian khởi động.
+- **Đọc checkout COD** từ [OrderService](src/main/java/vn/runway/store/service/OrderService.java) đến [kiểm thử MySQL](src/test/java/vn/runway/store/MySqlAcceptanceIT.java). Ca kiểm thử cho 10 người mua tranh sản phẩm cuối và kiểm tra chỉ một đơn được tạo.
+- **Đối chiếu bản sửa giao diện** và bài kiểm thử điều hướng ở 320 px trong [PR #16](https://github.com/nguyenhonggiang2407/RunwayStudio/pull/16). [Workflow CI](https://github.com/nguyenhonggiang2407/RunwayStudio/actions/workflows/ci.yml) chứa kết quả theo từng commit.
+
 ![Runway Studio](docs/screenshots/home-desktop-1440.png)
 
 Ảnh **City Notes** mới trên trang chủ là ảnh chụp thật được cấp phép từ Jonnas Duarte / Pexels, lưu local dạng WebP responsive. [Nguồn, điều kiện và checksum](docs/MEDIA_LICENSES.md). Các ảnh kế thừa vẫn được giữ nguyên và còn cần xác nhận quyền sử dụng; ảnh editorial không đại diện cho sản phẩm trong catalog.
+
+Trang chủ có mục **Mặc gì, mang gì?** với ảnh chụp tủ quần áo và túi tote. Các nút mở danh mục áo khoác và phụ kiện trong demo. [Nguồn ảnh và giấy phép](docs/MEDIA_LICENSES.md)
+
+![Hai gợi ý phối đồ và phụ kiện ở giao diện desktop](docs/screenshots/everyday-edit-desktop.jpg)
+
+[Xem giao diện trên điện thoại](docs/screenshots/everyday-edit-mobile.jpg)
 
 ## Live Demo
 
