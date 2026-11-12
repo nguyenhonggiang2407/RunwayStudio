@@ -2,20 +2,22 @@ export function editorial() {
   return `
     <section class="editorial-feature" aria-labelledby="editorial-title">
       <div class="editorial-copy">
-        <h1 id="editorial-title">Phối đồ cho<br>ngày thường.</h1>
-        <p>Từ đi học đến cà phê cuối tuần, bắt đầu bằng một món dễ mặc rồi thử ghép với đồ bạn thích trong Studio.</p>
+        <h1 id="editorial-title">Phối đồ cho ngày thường.</h1>
+        <p>Chọn một món dễ mặc rồi thử phối cho buổi học hoặc cuối tuần.</p>
         <div class="editorial-actions">
           <a class="btn" href="/shop">Xem cửa hàng <span aria-hidden="true">↗</span></a>
           <a class="text-link" href="/studio">Tạo bộ phối <span aria-hidden="true">↗</span></a>
         </div>
-        <p class="editorial-disclosure">Ảnh cảm hứng thời trang; trang phục trong ảnh không phải sản phẩm của cửa hàng.</p>
       </div>
       <figure class="editorial-image">
         <img src="/media/licensed/city-editorial-1200.webp"
           srcset="/media/licensed/city-editorial-600.webp 600w, /media/licensed/city-editorial-1200.webp 1200w"
           sizes="(max-width: 760px) 100vw, 50vw" width="1200" height="1800" fetchpriority="high" decoding="async"
           alt="Người mẫu mặc áo thun nâu và quần tối màu, ngồi bên bức tường vẽ tại Olinda">
-        <figcaption>Ảnh: <a href="https://www.pexels.com/photo/man-in-brown-crew-neck-t-shirt-and-black-denim-jeans-3116018/" target="_blank" rel="noopener noreferrer">Jonnas Duarte / Pexels</a></figcaption>
+        <figcaption>
+          <span class="editorial-disclosure">Ảnh cảm hứng, không phải sản phẩm của cửa hàng.</span>
+          <a href="https://www.pexels.com/photo/man-in-brown-crew-neck-t-shirt-and-black-denim-jeans-3116018/" target="_blank" rel="noopener noreferrer">Jonnas Duarte / Pexels</a>
+        </figcaption>
       </figure>
     </section>`;
 }

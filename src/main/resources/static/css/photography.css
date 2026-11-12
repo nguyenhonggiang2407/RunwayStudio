@@ -23,12 +23,14 @@ body {
   align-self: center;
 }
 .editorial-copy h1 {
-  font-family: Georgia, "Times New Roman", serif;
+  max-width: 15ch;
+  font-family: Cambria, "Times New Roman", serif;
   font-size: clamp(42px, 5.3vw, 78px);
   font-weight: 400;
-  letter-spacing: -2px;
+  letter-spacing: -0.025em;
   line-height: 1.1;
-  margin: 0 0 24px;
+  margin: 0 0 18px;
+  text-wrap: balance;
 }
 .editorial-copy > p {
   max-width: 440px;
@@ -41,10 +43,6 @@ body {
   align-items: center;
   gap: 24px;
   margin: 30px 0;
-}
-.editorial-copy > .editorial-disclosure {
-  font-size: 11px;
-  margin-bottom: 0;
 }
 .editorial-image {
   position: relative;
@@ -62,10 +60,14 @@ body {
   position: absolute;
   bottom: 16px;
   right: 16px;
+  max-width: calc(100% - 32px);
   background: #fffef4ed;
   padding: 8px 12px;
   color: #30372f;
-  font-size: 10px;
+  font-size: 11px;
+}
+.editorial-disclosure {
+  display: block;
 }
 .editorial-image figcaption a {
   text-decoration: underline;
@@ -81,7 +83,7 @@ body {
 }
 .everyday-heading h2 {
   margin: 0 0 8px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Cambria, "Times New Roman", serif;
   font-size: clamp(32px, 4vw, 52px);
   font-weight: 400;
   letter-spacing: -0.035em;
@@ -681,21 +683,46 @@ footer {
     grid-template-columns: 1fr;
   }
   .editorial-copy {
-    padding: 36px 6%;
+    padding: 24px 6%;
   }
   .editorial-copy h1 {
-    letter-spacing: -1px;
-    font-size: 42px;
+    font-size: clamp(36px, 8vw, 42px);
+    margin-bottom: 12px;
+  }
+  .editorial-copy > p {
+    line-height: 1.55;
+    margin-bottom: 0;
   }
   .editorial-image img {
-    height: clamp(300px, 74vw, 440px);
+    height: clamp(234px, 66vw, 400px);
+    object-position: center 27%;
+  }
+  .editorial-image figcaption {
+    position: static;
+    max-width: none;
+    background: transparent;
+    padding: 8px 6% 12px;
   }
   .editorial-actions {
-    gap: 18px;
-    margin: 24px 0;
+    gap: 8px 16px;
+    margin: 16px 0 0;
+  }
+  .editorial-actions .btn {
+    min-height: 44px;
+    padding: 9px 14px;
+    gap: 10px;
+  }
+  .editorial-actions .text-link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
   }
   .everyday-grid {
     grid-template-columns: 1fr;
+  }
+  .everyday-card img {
+    aspect-ratio: 3 / 2;
   }
   .site-header {
     height: auto;
@@ -830,6 +857,29 @@ footer {
   }
   .scene-layout:has(.photo-scene) {
     padding-top: 15px;
+  }
+}
+@media (max-width: 420px) {
+  .site-header {
+    min-height: 0;
+    gap: 0 12px;
+    padding: 6px 5% 0;
+  }
+  .site-header .brand span {
+    display: none;
+  }
+  .site-header nav {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0 4px;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+  .site-header :is(nav, .header-actions) a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    gap: 4px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

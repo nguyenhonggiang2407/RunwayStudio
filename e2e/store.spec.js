@@ -57,14 +57,29 @@ test.beforeEach(async ({ page }) => {
 });
 test.afterEach(() => expect(errors).toEqual([]));
 test("licensed editorial is local, disclosed and links to the real catalog", async ({ page }) => {
+  if (page.viewportSize()?.width === 360) {
+    await page.setViewportSize({ width: 320, height: 700 });
+  }
   await page.goto("/");
   const image = page.locator(".editorial-image img");
   await expect(image).toHaveAttribute("srcset", /city-editorial-600\.webp 600w/);
   await expect.poll(() => image.evaluate((img) => img.complete && img.naturalWidth > 0)).toBe(true);
   expect((await page.request.get(await image.getAttribute("src"))).status()).toBe(200);
   await expect(page.locator(".editorial-disclosure")).toContainText("không phải sản phẩm");
+  const shop = page.getByRole("link", { name: "Xem cửa hàng" });
+  if (page.viewportSize()?.width <= 420) {
+    const navigation = page.getByRole("navigation", { name: "Điều hướng chính" });
+    await expect(navigation.getByRole("link", { name: "Fit Finder" })).toBeInViewport();
+    const layout = await navigation.evaluate((nav) => ({
+      overflowing: nav.scrollWidth > nav.clientWidth + 1,
+      rows: new Set([...nav.querySelectorAll("a")].map((link) => link.offsetTop)).size,
+    }));
+    expect(layout).toEqual({ overflowing: false, rows: 1 });
+    await expect(shop).toBeInViewport();
+    await expect(image).toBeInViewport({ ratio: 0.8 });
+  }
   await noOverflow(page);
-  await page.locator(".editorial-actions .btn").click();
+  await shop.click();
   await expect(page.locator("#product-grid .product-card").first()).toBeVisible();
 });
 test("everyday photo cards credit real sources and open the relevant catalog filters", async ({ page }) => {
