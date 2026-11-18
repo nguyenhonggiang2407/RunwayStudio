@@ -1,5 +1,6 @@
 """Runs the packaged application with an isolated in-memory DB; exercises real HTTP."""
 import concurrent.futures,http.cookiejar,json,pathlib,subprocess,time,urllib.error,urllib.request,sys
+import os,secrets
 root=pathlib.Path(__file__).resolve().parents[1];jar=pathlib.Path(sys.argv[1]).resolve();port=18080;base=f'http://127.0.0.1:{port}'
 class Client:
  def __init__(self):self.opener=urllib.request.build_opener(urllib.request.ProxyHandler({}),urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()));self.csrf=None
@@ -16,7 +17,9 @@ class Client:
   raw=r.read();ct=r.headers.get('Content-Type','');return r.status,json.loads(raw) if 'application/json' in ct and raw else raw.decode(errors='replace')
  def login(self,email,password):
   status,data=self.call('/api/login',{'email':email,'password':password});assert status==200,(status,data);self.csrf=None
-log_path=pathlib.Path(__import__('tempfile').gettempdir())/'runway-http-server.log';log=open(log_path,'w');process=subprocess.Popen([str(pathlib.Path(__import__('shutil').which('java')).resolve()),'-jar',str(jar),'--server.address=127.0.0.1',f'--server.port={port}','--spring.datasource.url=jdbc:h2:mem:runway-http;MODE=MySQL;DB_CLOSE_DELAY=-1'],cwd=root,stdout=log,stderr=log)
+admin_password,customer_password=secrets.token_urlsafe(24),secrets.token_urlsafe(24)
+demo_env={**os.environ,'RUNWAY_ADMIN_PASSWORD':admin_password,'RUNWAY_CUSTOMER_PASSWORD':customer_password}
+log_path=pathlib.Path(__import__('tempfile').gettempdir())/'runway-http-server.log';log=open(log_path,'w');process=subprocess.Popen([str(pathlib.Path(__import__('shutil').which('java')).resolve()),'-jar',str(jar),'--server.address=127.0.0.1',f'--server.port={port}','--spring.datasource.url=jdbc:h2:mem:runway-http;MODE=MySQL;DB_CLOSE_DELAY=-1'],cwd=root,stdout=log,stderr=log,env=demo_env)
 results=[]
 def ok(label):results.append(label);print('PASS',label,flush=True)
 try:
@@ -36,13 +39,13 @@ try:
   reply=c.call(page);assert reply[0]==200,(page,reply[0],str(reply[1])[:300])
  ok('all six representative frontend routes return HTTP 200')
  image=products[0]['image'];assert c.call(image)[0]==200;ok('local product media is served')
- c.login('demo@runway.local','Demo@12345');assert c.call('/api/me')[1]['user']['role']=='CUSTOMER';ok('real CSRF + session login')
+ c.login('demo@runway.local',customer_password);assert c.call('/api/me')[1]['user']['role']=='CUSTOMER';ok('real CSRF + session login')
  assert c.call('/api/admin/products')[0]==403;ok('customer denied admin API')
- admin=Client();admin.login('admin@runway.local','Admin@12345');variant=products[0]['variants'][0];vid=variant['id'];size=variant['size'];price=variant['price']
+ admin=Client();admin.login('admin@runway.local',admin_password);variant=products[0]['variants'][0];vid=variant['id'];size=variant['size'];price=variant['price']
  assert admin.call('/api/admin/variants/'+str(vid),{'size':size,'price':100000,'stock':1},'PUT')[0]==200
  buyers=[Client(),Client()]
  for n,b in enumerate(buyers):
-  email=f'http-race-{n}@example.test';password='HttpFixture@12345'
+  email=f'http-race-{n}@example.test';password=secrets.token_urlsafe(24)
   assert b.call('/api/register',{'name':'HTTP fixture','email':email,'password':password})[0]==200
   b.login(email,password);assert b.call('/cart/add.js',{'items':[{'id':vid,'quantity':1}]})[0]==200
  payload=lambda n:{'recipient':'Khách hàng kiểm thử','phone':'0912345678','address':'Địa chỉ mẫu phục vụ kiểm thử Hà Nội','note':'Dữ liệu kiểm thử','requestId':f'concurrent-checkout-{n}-0001'}

@@ -20,14 +20,9 @@ import vn.runway.store.repository.*;
 import vn.runway.store.service.*;
 import vn.runway.store.web.ApiErrors.BadRequest;
 
-@SpringBootTest(
-    properties = {
-      "app.seed.enabled=true",
-      "app.seed.admin-password=TestAdmin@12345",
-      "app.seed.customer-password=TestCustomer@12345"
-    })
+@SpringBootTest(properties = "app.seed.enabled=true")
 @ActiveProfiles("mysql")
-class MySqlAcceptanceIT {
+class MySqlAcceptanceIT extends DemoAccountFixtures {
   @Autowired OrderService service;
   @Autowired CatalogService catalog;
   @Autowired AccountRepository accounts;

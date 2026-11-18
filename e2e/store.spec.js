@@ -1,6 +1,7 @@
 import { test, expect } from "@playwright/test";
+import { randomUUID } from "node:crypto";
 import { mkdir } from "node:fs/promises";
-const fixturePassword = "E2eFixture@12345";
+const fixturePassword = randomUUID();
 async function send(request, url, data, method = "post") {
   const t = await (await request.get("/api/csrf")).json();
   return request[method](url, { data, headers: { [t.headerName]: t.token } });
@@ -24,7 +25,7 @@ async function login(page, request, admin = false) {
   await f.getByLabel("Email", { exact: true }).fill(email);
   await f
     .getByLabel("Mật khẩu", { exact: true })
-    .fill(admin ? "Admin@12345" : fixturePassword);
+    .fill(admin ? process.env.RUNWAY_E2E_ADMIN_PASSWORD : fixturePassword);
   await f.getByRole("button", { name: "Đăng nhập ↗", exact: true }).click();
   await expect(page.getByRole("heading", { name: /Xin chào/ })).toBeVisible();
 }

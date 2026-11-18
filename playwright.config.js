@@ -1,4 +1,8 @@
 import { defineConfig } from "@playwright/test";
+import { randomUUID } from "node:crypto";
+
+process.env.RUNWAY_E2E_ADMIN_PASSWORD ??= randomUUID();
+
 export default defineConfig({
   testDir: "./e2e",
   fullyParallel: false,
@@ -32,6 +36,7 @@ export default defineConfig({
   ],
   webServer: {
     command: "node tools/e2e-server.mjs",
+    env: { RUNWAY_ADMIN_PASSWORD: process.env.RUNWAY_E2E_ADMIN_PASSWORD },
     url: "http://127.0.0.1:4187/actuator/health/readiness",
     reuseExistingServer: false,
     timeout: 90000,

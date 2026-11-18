@@ -10,7 +10,7 @@ This is a deliberately **ephemeral public demo**, not a production deployment.
 4. Confirm Render has access to the repository, then apply.
 5. Open the actual `onrender.com` URL shown by Render, and verify the health endpoint and storefront before publishing a GitHub Live Demo link.
 
-The Blueprint uses the existing multi-stage `Dockerfile` (Java 17), the existing `demo` Spring profile, and H2 in-memory database. Render supplies randomized secrets for local-demo accounts, so the hard-coded *local only* passwords in the README are **not valid** for the public deployment. A visitor may register a fresh customer account for testing; do not share or publish the generated administrator secret.
+The Blueprint uses the multi-stage `Dockerfile` (Java 17), the `demo` Spring profile, and H2 in-memory database. Render supplies randomized secrets for the two seeded accounts. Visitors can register a customer account to explore the storefront. Keep the generated administrator secret private. The separate `portfolio-demo` profile is documented for disposable local review.
 
 ## Expected limits
 

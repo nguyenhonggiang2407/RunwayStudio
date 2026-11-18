@@ -1,6 +1,7 @@
 package vn.runway.store.config;
 
 import com.fasterxml.jackson.databind.*;
+import java.nio.charset.StandardCharsets;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -51,8 +52,6 @@ public class SeedData implements CommandLineRunner {
     if (!enabled) return;
     if (environment.acceptsProfiles(org.springframework.core.env.Profiles.of("prod")))
       throw new IllegalStateException("Demo seed is forbidden in prod");
-    if (adminPassword.length() < 10 || customerPassword.length() < 10)
-      throw new IllegalStateException("Explicit demo passwords required");
     if (products.count() == 0) {
       try (var stream = getClass().getResourceAsStream("/catalog-seed.json")) {
         for (JsonNode n : json.readTree(stream)) {
@@ -76,12 +75,20 @@ public class SeedData implements CommandLineRunner {
         }
       }
     }
-    seedUser("admin@runway.local", "Quản trị Runway", adminPassword, "ADMIN");
-    seedUser("demo@runway.local", "Khách hàng demo", customerPassword, "CUSTOMER");
+    if (!environment.matchesProfiles("portfolio-demo")) {
+      seedUser("admin@runway.local", "Quản trị Runway", adminPassword, "ADMIN");
+      seedUser("demo@runway.local", "Khách hàng demo", customerPassword, "CUSTOMER");
+    }
     studio.seed();
   }
 
   private void seedUser(String email, String name, String password, String role) {
+    if (password.isEmpty()) return;
+    if (password.isBlank()
+        || password.length() < 10
+        || password.getBytes(StandardCharsets.UTF_8).length > 72) {
+      throw new IllegalStateException("Demo passwords require 10 characters and at most 72 UTF-8 bytes.");
+    }
     if (accounts.findByEmail(email).isEmpty()) {
       Account a = new Account();
       a.email = email;
