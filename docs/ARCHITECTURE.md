@@ -42,7 +42,11 @@ sequenceDiagram
   S->>D: Find accountId + requestId
   alt Existing order
     D-->>S: Original order
-    S-->>C: Return order without clearing new cart
+    alt Matching fingerprint or legacy order
+      S-->>C: Return order without clearing new cart
+    else Different checkout details
+      S-->>C: Return 409 without changing cart or order
+    end
   else New order
     S->>D: Read cart and lock variants in ascending ID
     S->>S: Validate stock and calculate price/discount/shipping
@@ -54,7 +58,7 @@ sequenceDiagram
 
 Account lock tuần tự hóa checkout và giỏ DB của cùng tài khoản. Variant lock bảo vệ tồn kho khi các tài khoản khác nhau mua cùng phân loại. Thứ tự ID nhất quán giảm nguy cơ deadlock giữa các giỏ nhiều dòng; đây không phải cam kết loại bỏ mọi deadlock hoặc chứng minh thông lượng sản xuất.
 
-Idempotency hiện tra theo `accountId:requestId` và trả đơn cũ trước khi đọc/xóa giỏ. Mã này **không so sánh digest payload** khi key được dùng lại; client cần giữ nguyên key cho cùng một ý định và tạo key mới cho lần mua mới.
+Idempotency tra theo `accountId:requestId` trước khi đọc giỏ. Đơn mới lưu SHA-256 của thông tin checkout đã chuẩn hóa. Nếu fingerprint khác, server trả `409`. Đơn trước migration V4 giữ hành vi replay theo ID để tương thích. Giỏ hiện tại có thể đã thay đổi sau lần mua nên fingerprint chỉ dùng dữ liệu trong request checkout. Client giữ ID khi gửi lại cùng yêu cầu và tạo ID mới cho lần mua mới.
 
 | Hành vi cần xem | Test có trong mã nguồn |
 | --- | --- |
@@ -62,6 +66,7 @@ Idempotency hiện tra theo `accountId:requestId` và trả đơn cũ trước k
 | Nhiều retry cùng key chỉ tạo một đơn | [MySqlAcceptanceIT](../src/test/java/vn/runway/store/MySqlAcceptanceIT.java): `concurrentRetriesCreateOneOrder` |
 | Hủy đồng thời chỉ hoàn tồn một lần | [MySqlAcceptanceIT](../src/test/java/vn/runway/store/MySqlAcceptanceIT.java): `concurrentCancellationRestocksOnce` |
 | Retry đơn cũ giữ giỏ mới ở session khác | [CommerceIntegrationTest](../src/test/java/vn/runway/store/CommerceIntegrationTest.java): `oldRetryDoesNotEraseNewPersistentCartInAnotherSession` |
+| Cùng key nhưng khác thông tin checkout trả 409 và giữ nguyên giỏ | [CommerceIntegrationTest](../src/test/java/vn/runway/store/CommerceIntegrationTest.java): `sameCheckoutKeyRejectsChangedFieldsWithoutChangingCartOrOrder` |
 | Checkout thiếu tồn không tạo đơn | [StoreIntegrationTest](../src/test/java/vn/runway/store/StoreIntegrationTest.java): `failedCheckoutRollsBackAllStock` |
 
 Các test MySQL chạy qua profile `mysql-verify`; cần hai schema tạm riêng theo [DEPLOYMENT](DEPLOYMENT.md). [Workflow](../.github/workflows/ci.yml) tách MySQL, Java/browser và quét secret thành các job; xem [kết quả Actions](https://github.com/nguyenhonggiang2407/RunwayStudio/actions/workflows/ci.yml) để phân biệt test có trong mã với test đã chạy. Các trường hợp hữu hạn này không thay thế kiểm thử tải hoặc audit production.

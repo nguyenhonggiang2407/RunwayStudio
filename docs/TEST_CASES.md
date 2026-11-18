@@ -2,7 +2,7 @@
 
 ## Java/H2
 
-`./mvnw clean verify` chạy test không cần DB ngoài. Mỗi test ghi dùng transaction rollback; H2 được tạo từ Flyway V1–V3 và Hibernate validate.
+`./mvnw clean verify` chạy test không cần DB ngoài. Mỗi test ghi dùng transaction rollback. Flyway V1–V4 tạo schema H2 trước khi Hibernate kiểm tra.
 
 | Suite | Phạm vi |
 |---|---|

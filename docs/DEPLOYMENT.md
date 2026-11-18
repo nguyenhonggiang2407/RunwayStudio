@@ -16,7 +16,7 @@ export DB_PASSWORD='your-own-database-password'
 java -jar target/runway-store-2.0.0.jar
 ```
 
-`prod` tắt seed. Khi schema trống, Flyway chạy V1→V2→V3 trước Hibernate validate. Không có fallback mật khẩu DB. Không đưa `.env` hay password thật vào Git. Lệnh ví dụ chứa placeholder, không phải credential được cấp sẵn.
+`prod` tắt seed. Khi schema trống, Flyway chạy V1→V2→V3→V4 trước Hibernate validate. V4 thêm cột fingerprint có thể để trống để giữ nguyên dữ liệu và replay của đơn cũ. Không có fallback mật khẩu DB. Không đưa `.env` hay password thật vào Git. Lệnh ví dụ chứa placeholder, không phải credential được cấp sẵn.
 
 Để provision admin đầu tiên, bật **một lần** `RUNWAY_BOOTSTRAP_ENABLED=true`, đặt `RUNWAY_BOOTSTRAP_EMAIL` và `RUNWAY_BOOTSTRAP_PASSWORD` riêng (16–72 byte UTF-8). Sau startup thành công, tắt flag và gỡ password khỏi môi trường chạy. Bootstrap không đổi mật khẩu admin đã có và không nâng customer sẵn có lên admin. Đăng ký public luôn tạo CUSTOMER.
 
